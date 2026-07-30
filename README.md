@@ -2,7 +2,7 @@
 
 LaTeX CV with automated build and GitHub Pages hosting.
 
-**Live PDF**: [https://gfgf96.github.io/cv/resume.pdf](https://gfgf96.github.io/cv/resume.pdf)
+**Live PDF**: [https://gfgf96.github.io/CV/resume.pdf](https://gfgf96.github.io/CV/resume.pdf)
 
 ## How it works
 
