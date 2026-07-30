@@ -1,0 +1,56 @@
+name: Build CV and Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cv/**'
+      - '.github/workflows/build.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          working_directory: cv
+
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site
+          cp cv/resume.pdf _site/resume.pdf
+          # Simple index page that redirects to the PDF
+          cat > _site/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head><meta http-equiv="refresh" content="0; url=resume.pdf"></head>
+          <body><a href="resume.pdf">Download CV</a></body>
+          </html>
+          EOF
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

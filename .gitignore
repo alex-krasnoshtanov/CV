@@ -1,0 +1,27 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.toc
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# Keep compiled PDFs tracked (this is the deliverable)
+# If you want to ignore PDFs, uncomment:
+# *.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/

@@ -1,0 +1,184 @@
+%-------------------------
+% Resume in LaTeX
+% Based on: https://github.com/jakegut/resume
+% License: MIT
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% ATS-friendly: ensure PDF is machine-readable
+\pdfgentounicode=1
+
+%-------------------------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%===========================================================================
+%                             DOCUMENT START
+%===========================================================================
+\begin{document}
+
+%-----------HEADING-----------
+\begin{center}
+    \textbf{\Huge \scshape Oleksii Krasnoshtanov} \\ \vspace{1pt}
+    \small
+    \href{mailto:oleksiikrasnoshtanov@gmail.com}{\underline{oleksiikrasnoshtanov@gmail.com}} $|$
+    +31 6 29746862 $|$
+    Tilburg, Netherlands $|$
+    \href{https://linkedin.com/in/oleksii-krasnoshtanov}{\underline{LinkedIn}} $|$
+    \href{https://github.com/Gfgf96}{\underline{GitHub}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Breda University of Applied Sciences}{Breda, Netherlands}
+      {Bachelor of Science in Data Science \& Artificial Intelligence; 9.1/10 (4.0 GPA)}{Sep 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{BUas Bachelor Scholarship recipient}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+% NOTE: These are client/coursework projects that went to production.
+% They functionally ARE work experience -- framed as projects because
+% there was no employment contract, but the deliverables were real.
+\section{Projects \& Technical Work}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual Project, BUas}}{Nov 2025 -- Jan 2026}
+      \resumeItemListStart
+        \resumeItem{Ranked \textbf{\#2 of 77} in Kaggle competition for plant root segmentation; selected to present results}
+        \resumeItem{Designed autonomous phenotyping system integrating custom PyTorch U-Net segmentation with PyBullet-simulated OT-2 robot; implemented and benchmarked PID and PPO reinforcement learning controllers}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Emotion Analysis Pipeline} $|$ \emph{Group Project -- Dutch Media Client}}{Sep -- Nov 2025}
+      \resumeItemListStart
+        \resumeItem{Developed production NLP pipeline for a Dutch media client, processing 40-min video episodes end-to-end: Faster-Whisper V3 transcription with VAD, multilingual emotion classification (6 Ekman + neutral), and automated visualisation}
+        \resumeItem{Fine-tuned DeBERTa and Russian transformer models on merged datasets augmented with Mistral-generated synthetic data; cross-validated across languages to stabilise multilingual predictions}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{Group Project, BUas}}{Feb -- Jun 2026}
+      \resumeItemListStart
+        \resumeItem{Developed MLOps platform for plant organ segmentation: U-Net (resnet34 encoder), FastAPI backend, Next.js frontend, PostgreSQL, Prometheus monitoring}
+        \resumeItem{Implemented full ML lifecycle with Airflow DAGs for data versioning and Azure ML training, automated drift detection, feedback-driven retraining, and CI/CD enforcing 80\% test coverage}
+        \resumeItem{Deployed to three environments (local Docker Compose, on-premise Portainer, Azure Container Apps) with API-key and session-based authentication}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Ukrainian Lecture Transcription Service} $|$ \emph{Personal Project}}{Jun 2026}
+      \resumeItemListStart
+        \resumeItem{Built self-hosted transcription service for Ukrainian audio on Faster-Whisper (CTranslate2) with automatic GPU selection via NVML; fully offline, no cloud dependencies}
+        \resumeItem{Deployed on 8-GPU university rack via Docker + Portainer with FastAPI backend, live progress bar, and single-page web UI}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-Person Sprint}}{Apr -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Built self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and FastAPI backend; client deployed to production}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------HACKATHONS & COMPETITIONS-----------
+\section{Hackathons \& Competitions}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{BrabantHack 2026} $|$ \emph{Winner -- Demcon Deep Tech Track}}{Apr 2026}
+      \resumeItemListStart
+        \resumeItem{Won Demcon Deep Tech track: ResNet50 multi-head bounding box regression for shadow-based pedestrian detection (0.626 IoU on held-out set)}
+        \resumeItem{Team of 3; led architecture selection and training pipeline design under 24-hour time constraint}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{HERE Technologies Hackathon} $|$ \emph{RDM Verification Challenge}}{2026}
+      \resumeItemListStart
+        \resumeItem{Built XGBoost classification pipeline for Restricted Driving Manoeuvre verification combining probe GPS features with Mapillary and OSM geospatial signals; designed synthetic data scrambling for NDA-compliant delivery}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, SQL} \\
+     \textbf{ML / Deep Learning}{: PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost, HuggingFace Transformers} \\
+     \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, NLTK, FAISS} \\
+     \textbf{Computer Vision}{: OpenCV, U-Net, PyBullet} \\
+     \textbf{Infrastructure}{: Docker, Git, FastAPI, Streamlit, Portainer, Ollama, GitHub Actions CI/CD} \\
+     \textbf{MLOps \& Cloud}{: Azure ML, Airflow, Prometheus, MLflow} \\
+     \textbf{Data \& Analytics}{: Pandas, NumPy, PostgreSQL, Power BI} \\
+     \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent)}
+    }}
+ \end{itemize}
+
+\end{document}
