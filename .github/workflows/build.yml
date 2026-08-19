@@ -6,6 +6,11 @@ on:
     paths:
       - 'cv/**'
       - '.github/workflows/build.yml'
+  # Manual trigger. The paths filter above silently skips the build whenever
+  # GitHub can't diff the push against the previous head — after a force-push
+  # or history rewrite, for instance — which previously meant pushing an empty
+  # "trigger build" commit to get a fresh PDF. This makes that a button.
+  workflow_dispatch:
 
 permissions:
   contents: read
