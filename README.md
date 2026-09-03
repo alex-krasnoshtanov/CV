@@ -23,20 +23,36 @@ Or just save in VS Code with LaTeX Workshop installed.
 ## Structure
 
 - `cv/resume.tex` -- source file
-- `site/index.html` -- landing page served at `/CV/`; `BUILD_DATE` is substituted at build time
+- `site/index.html` -- the page served at `/CV/`; copied verbatim at build time
 - `.github/workflows/build.yml` -- auto-compile + deploy
 
-## Why there is a landing page and not just the PDF
+## Why there is a page at `/CV/` and not just the PDF
 
 Link a bare `.pdf` on LinkedIn and it renders as a plain text link: a PDF carries
 no Open Graph metadata, so there is no title, description or thumbnail to show.
-The landing page supplies those, and its `og:image` is regenerated from page 1 of
-the PDF on every build, so the preview never drifts from the actual CV.
 
-The embedded viewer is deliberately desktop-only. Mobile browsers -- iOS Safari,
-and the in-app browser LinkedIn opens links in -- will not render a PDF inside an
-`<iframe>` or `<object>`; they paint an empty box. On small screens the page shows
-the buttons instead, which work everywhere.
+The page exists only to supply that metadata. All of it sits in `<head>`, which a
+reader never sees, so the page has no visible chrome at all -- the resume is the
+entire content. `og:image` is regenerated from page 1 on every build and cannot
+drift from the actual CV.
+
+## What each viewport gets
+
+Desktop (`min-width: 60rem` and a fine pointer) gets `resume.pdf` in an iframe
+filling the viewport: real selectable text, and the browser's own download and
+print controls rather than any of ours.
+
+Phones get `page1.png` instead, full width. This is not a preference -- iOS
+Safari and the in-app browsers LinkedIn opens links in refuse to render a PDF
+inside an `<iframe>` or `<object>` and paint an empty box, so a viewer there would
+be a blank screen. A rendered image always works and looks identical to the
+document. A small pill in the bottom corner opens the real PDF; it is the only
+element on the page that is not the resume, and it is hidden on desktop.
+
+Both images are produced by `pdftoppm` during the build, and the build fails if
+either comes out at unexpected dimensions -- which is what would happen if the
+paper size in `resume.tex` ever changed without `index.html` being updated to
+match.
 
 Nothing about this changes `resume.pdf`. It stays at the same URL and anyone who
 already links straight to it is unaffected.

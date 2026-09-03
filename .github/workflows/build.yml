@@ -49,22 +49,35 @@ jobs:
           set -euo pipefail
           mkdir -p _site
           cp cv/resume.pdf _site/resume.pdf
+          cp site/index.html _site/index.html
 
-          # The landing page is a real file in site/ rather than a heredoc, so it
-          # can be edited and reviewed like anything else. BUILD_DATE is the only
-          # thing CI substitutes.
-          sed "s/BUILD_DATE/$(date -u '+%-d %B %Y')/" site/index.html > _site/index.html
+          # page1.png is what phones actually see. Mobile browsers will not
+          # render a PDF inside an <object> or <iframe>, so the page shows a
+          # rendered image of the document instead of a viewer that would come
+          # up blank. 200 dpi on letter paper is 1700x2200, which stays sharp
+          # on a 3x screen; the <img> in index.html hardcodes those numbers to
+          # reserve the space before it loads.
+          pdftoppm -png -r 200 -f 1 -l 1 -singlefile cv/resume.pdf _site/page1
 
-          # Social preview: the top slice of page 1, at the 1200x627-ish ratio
-          # LinkedIn and Slack crop to. Letter paper at 150 dpi is 1275px wide,
-          # so 666px tall holds that ratio exactly and lands on the header plus
-          # education. Cropping in pdftoppm avoids needing ImageMagick at all.
+          # preview.png is the link card. Letter at 150 dpi is 1275px wide, so
+          # a 666px crop holds the 1200x627 ratio LinkedIn and Slack crop to
+          # and lands on the header plus education. Cropping inside pdftoppm
+          # avoids needing ImageMagick at all.
           pdftoppm -png -r 150 -f 1 -l 1 -x 0 -y 0 -W 1275 -H 666 -singlefile cv/resume.pdf _site/preview
 
+          # Fail the build rather than deploy a page with a broken image or a
+          # card LinkedIn cannot read.
+          test -s _site/page1.png
           test -s _site/preview.png
-          test -s _site/index.html
           grep -q 'og:image' _site/index.html
-          ! grep -q 'BUILD_DATE' _site/index.html
+          python3 -c "
+          import struct, sys
+          for name, want in (('_site/page1.png', (1700, 2200)), ('_site/preview.png', (1275, 666))):
+              w, h = struct.unpack('>II', open(name, 'rb').read()[16:24])
+              print(f'{name}: {w}x{h}')
+              if (w, h) != want:
+                  sys.exit(f'{name} is {w}x{h}, expected {want[0]}x{want[1]} -- paper size changed?')
+          "
           ls -l _site
 
       - name: Upload Pages artifact
