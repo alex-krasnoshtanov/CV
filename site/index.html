@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oleksii Krasnoshtanov — Resume</title>
+<link rel="canonical" href="https://alex-krasnoshtanov.github.io/CV/">
+<meta name="description" content="Resume of Oleksii Krasnoshtanov — Applied Data Science &amp; AI. Computer vision, NLP, RAG systems and MLOps.">
+
+<!-- Open Graph. LinkedIn, Slack and iMessage all read these; without og:image
+     LinkedIn renders a bare text link instead of a preview card. The image is
+     regenerated from page 1 of the PDF on every build, so it never goes stale. -->
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://alex-krasnoshtanov.github.io/CV/">
+<meta property="og:title" content="Oleksii Krasnoshtanov — Resume">
+<meta property="og:description" content="Applied Data Science &amp; AI — computer vision, NLP, RAG systems and MLOps.">
+<meta property="og:image" content="https://alex-krasnoshtanov.github.io/CV/preview.png">
+<meta property="og:image:width" content="1275">
+<meta property="og:image:height" content="666">
+<meta property="og:image:alt" content="First page of Oleksii Krasnoshtanov's resume">
+<meta property="profile:first_name" content="Oleksii">
+<meta property="profile:last_name" content="Krasnoshtanov">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oleksii Krasnoshtanov — Resume">
+<meta name="twitter:description" content="Applied Data Science &amp; AI — computer vision, NLP, RAG systems and MLOps.">
+<meta name="twitter:image" content="https://alex-krasnoshtanov.github.io/CV/preview.png">
+
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14181b" media="(prefers-color-scheme: dark)">
+
+<style>
+  :root {
+    color-scheme: light dark;
+    --ground: #ffffff;
+    --panel:  #f4f5f4;
+    --ink:    #16191c;
+    --muted:  #5c6a6e;
+    --rule:   #d8dedd;
+    --accent: #0d6a70;
+    --on-accent: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #14181b;
+      --panel:  #1b2124;
+      --ink:    #e7ecea;
+      --muted:  #93a3a5;
+      --rule:   #2d3639;
+      --accent: #57c3c8;
+      --on-accent: #0e2224;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--ground);
+    color: var(--ink);
+    font: 400 16px/1.55 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    flex: 0 0 auto;
+    padding: 1.6rem clamp(1.1rem, 4vw, 2.4rem) 1.3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(1.35rem, 4.2vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: -0.012em;
+  }
+
+  .tagline {
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .actions {
+    margin-top: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .actions a {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 0.95rem;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    color: var(--ink);
+    background: var(--panel);
+    white-space: nowrap;
+  }
+  .actions a.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+  }
+  .actions a:hover { border-color: var(--accent); }
+  .actions a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .stamp {
+    margin: 0.9rem 0 0;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  /* The inline viewer is desktop-only on purpose. Mobile browsers - iOS Safari
+     and the in-app browsers LinkedIn opens links in - do not render a PDF in an
+     iframe or object; they paint an empty box. Hiding it there means those
+     visitors get the buttons above, which work everywhere, instead of a blank
+     white screen. */
+  .viewer { display: none; }
+
+  @media (min-width: 60rem) and (pointer: fine) {
+    .viewer {
+      display: block;
+      flex: 1 1 auto;
+      min-height: 0;
+      background: var(--panel);
+    }
+    .viewer object,
+    .viewer iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+
+  .fallback {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .fallback a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Oleksii Krasnoshtanov</h1>
+    <p class="tagline">Applied Data Science &amp; AI — computer vision, NLP, RAG systems and MLOps.</p>
+
+    <nav class="actions">
+      <a class="primary" href="resume.pdf">Open the PDF</a>
+      <a href="resume.pdf" download="Oleksii-Krasnoshtanov-Resume.pdf">Download</a>
+      <a href="https://github.com/alex-krasnoshtanov">GitHub</a>
+      <a href="https://www.linkedin.com/in/oleksii-krasnoshtanov/">LinkedIn</a>
+    </nav>
+
+    <p class="stamp">Rebuilt automatically from LaTeX — last updated BUILD_DATE</p>
+  </header>
+
+  <main class="viewer">
+    <object data="resume.pdf" type="application/pdf" aria-label="Resume, embedded PDF">
+      <div class="fallback">
+        <p>Your browser will not display the PDF inline.
+           <a href="resume.pdf">Open it in a new tab</a> instead.</p>
+      </div>
+    </object>
+  </main>
+
+</body>
+</html>

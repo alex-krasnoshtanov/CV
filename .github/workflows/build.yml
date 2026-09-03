@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'cv/**'
+      - 'site/**'
       - '.github/workflows/build.yml'
   # Manual trigger. The paths filter above silently skips the build whenever
   # GitHub can't diff the push against the previous head — after a force-push
@@ -38,18 +39,33 @@ jobs:
           root_file: resume.tex
           working_directory: cv
 
+      # pdftoppm renders the preview card below. Not preinstalled on the runner
+      # image, and cheap enough that pinning a cache would cost more than it saves.
+      - name: Install poppler
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+
       - name: Prepare Pages artifact
         run: |
+          set -euo pipefail
           mkdir -p _site
           cp cv/resume.pdf _site/resume.pdf
-          # Simple index page that redirects to the PDF
-          cat > _site/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head><meta http-equiv="refresh" content="0; url=resume.pdf"></head>
-          <body><a href="resume.pdf">Download CV</a></body>
-          </html>
-          EOF
+
+          # The landing page is a real file in site/ rather than a heredoc, so it
+          # can be edited and reviewed like anything else. BUILD_DATE is the only
+          # thing CI substitutes.
+          sed "s/BUILD_DATE/$(date -u '+%-d %B %Y')/" site/index.html > _site/index.html
+
+          # Social preview: the top slice of page 1, at the 1200x627-ish ratio
+          # LinkedIn and Slack crop to. Letter paper at 150 dpi is 1275px wide,
+          # so 666px tall holds that ratio exactly and lands on the header plus
+          # education. Cropping in pdftoppm avoids needing ImageMagick at all.
+          pdftoppm -png -r 150 -f 1 -l 1 -x 0 -y 0 -W 1275 -H 666 -singlefile cv/resume.pdf _site/preview
+
+          test -s _site/preview.png
+          test -s _site/index.html
+          grep -q 'og:image' _site/index.html
+          ! grep -q 'BUILD_DATE' _site/index.html
+          ls -l _site
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
