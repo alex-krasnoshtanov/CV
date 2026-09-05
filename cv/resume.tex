@@ -108,36 +108,36 @@
   \resumeSubHeadingListStart
 
     \resumeProjectHeading
-      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual Project, BUas}}{Nov 2025 -- Jan 2026}
+      {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
+      \resumeItemListStart
+        \resumeItem{Built an MLOps platform for plant organ segmentation and root-tip detection: U-Net (ResNet-34 encoder) served behind an authenticated FastAPI backend with a Next.js frontend, PostgreSQL and Prometheus}
+        \resumeItem{Ran the full model lifecycle from Airflow DAGs -- data versioning and Azure ML training, drift detection on confidence, latency and error rate, and retraining driven by researcher feedback on flagged predictions}
+        \resumeItem{Owned the deployment and CI/CD tier: one codebase shipping to Docker Compose, on-premise Portainer and Azure Container Apps, with blue-green cutover, health-gated rollback and OIDC-federated cloud auth; CI gates 85\% coverage across 430 tests}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Dutch Sign Language Fingerspelling Trainer} $|$ \emph{Personal Project} $|$ \href{https://github.com/alex-krasnoshtanov/DSL-Learning}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/DSL-Learning/}{\underline{Docs}}}{May -- Sep 2026}
+      \resumeItemListStart
+        \resumeItem{Real-time NGT alphabet trainer: MediaPipe hand landmarks feed a PyTorch residual MLP for the 24 static letters (95\% validation accuracy) and a bidirectional LSTM over 30-frame sequences for the two letters requiring motion (92\%)}
+        \resumeItem{Sole author: FastAPI WebSocket backend streaming to a Next.js 16 / TypeScript frontend, bilingual EN/NL, containerised with CI and published documentation}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual Project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
       \resumeItemListStart
         \resumeItem{Ranked \textbf{\#2 of 77} in Kaggle competition for plant root segmentation; selected to present results}
-        \resumeItem{Designed autonomous phenotyping system integrating custom PyTorch U-Net segmentation with PyBullet-simulated OT-2 robot; implemented and benchmarked PID and PPO reinforcement learning controllers}
+        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot coordinate transform and OT-2 pipette control in a PyBullet simulation -- and benchmarked PID against a PPO reinforcement-learning controller}
       \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Emotion Analysis Pipeline} $|$ \emph{Group Project -- Dutch Media Client}}{Sep -- Nov 2025}
       \resumeItemListStart
-        \resumeItem{Developed production NLP pipeline for a Dutch media client, processing 40-min video episodes end-to-end: Faster-Whisper V3 transcription with VAD, multilingual emotion classification (6 Ekman + neutral), and automated visualisation}
+        \resumeItem{Developed production NLP pipeline processing 40-minute video episodes end-to-end: Faster-Whisper V3 transcription with VAD, multilingual emotion classification (6 Ekman categories plus neutral), and automated visualisation}
         \resumeItem{Fine-tuned DeBERTa and Russian transformer models on merged datasets augmented with Mistral-generated synthetic data; cross-validated across languages to stabilise multilingual predictions}
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{Group Project, BUas}}{Feb -- Jun 2026}
-      \resumeItemListStart
-        \resumeItem{Developed MLOps platform for plant organ segmentation: U-Net (resnet34 encoder), FastAPI backend, Next.js frontend, PostgreSQL, Prometheus monitoring}
-        \resumeItem{Implemented full ML lifecycle with Airflow DAGs for data versioning and Azure ML training, automated drift detection, feedback-driven retraining, and CI/CD enforcing 80\% test coverage}
-        \resumeItem{Deployed to three environments (local Docker Compose, on-premise Portainer, Azure Container Apps) with API-key and session-based authentication}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{Ukrainian Lecture Transcription Service} $|$ \emph{Personal Project}}{Jul 2026}
-      \resumeItemListStart
-        \resumeItem{Built self-hosted transcription service for Ukrainian audio on Faster-Whisper (CTranslate2) with automatic GPU selection via NVML; fully offline, no cloud dependencies}
-        \resumeItem{Deployed on 8-GPU university rack via Docker + Portainer with FastAPI backend, live progress bar, and single-page web UI}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-Person Sprint}}{Apr -- May 2025}
+      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-Person Sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
       \resumeItemListStart
         \resumeItem{Built self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and Gradio web interface; client deployed to production}
       \resumeItemListEnd
@@ -149,10 +149,10 @@
   \resumeSubHeadingListStart
 
     \resumeProjectHeading
-      {\textbf{BrabantHack 2026} $|$ \emph{Winner -- Demcon Deep Tech Track}}{Apr 2026}
+      {\textbf{BrabantHack 2026} $|$ \emph{Winner -- Demcon Deep Tech Track} $|$ \href{https://github.com/alex-krasnoshtanov/Detection-by-Shadow}{\underline{Code}}}{Apr 2026}
       \resumeItemListStart
-        \resumeItem{Won Demcon Deep Tech track: ResNet50 multi-head bounding box regression for shadow-based pedestrian detection (0.626 IoU on held-out set)}
-        \resumeItem{Team of 3; led architecture selection and training pipeline design under 24-hour time constraint}
+        \resumeItem{Won the Demcon track with a model that locates a pedestrian standing entirely outside the camera frame from the shadow they cast into it: \textbf{0.626 mean IoU} on the organisers' hidden test set, team of 3}
+        \resumeItem{Drove the accuracy by replacing direct four-corner box regression with targets defined relative to the frame edge -- side, distance from edge, width, height, y-centre -- on a ResNet-50 trunk fused with 19 hand-crafted shadow descriptors; 0.468 to 0.610 mean IoU on a held-out split, reproducible from the repository}
       \resumeItemListEnd
 
     \resumeProjectHeading
@@ -167,13 +167,13 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, SQL} \\
-     \textbf{ML / Deep Learning}{: PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost, HuggingFace Transformers} \\
-     \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, NLTK, FAISS} \\
-     \textbf{Computer Vision}{: OpenCV, U-Net, PyBullet} \\
-     \textbf{Infrastructure}{: Docker, Git, FastAPI, Streamlit, Portainer, Ollama, GitHub Actions CI/CD} \\
-     \textbf{MLOps \& Cloud}{: Azure ML, Airflow, Prometheus, MLflow} \\
-     \textbf{Data \& Analytics}{: Pandas, NumPy, PostgreSQL, Power BI} \\
+     \textbf{Languages}{: Python, SQL, TypeScript} \
+     \textbf{ML / Deep Learning}{: PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost, HuggingFace Transformers} \
+     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \
+     \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, FAISS, NLTK, Ollama} \
+     \textbf{MLOps \& Cloud}{: Azure ML, Azure Container Apps, Airflow, MLflow, Prometheus, GitHub Actions CI/CD} \
+     \textbf{Infrastructure}{: Docker, Docker Compose, Portainer, FastAPI, Next.js, PostgreSQL, Git} \
+     \textbf{Data \& Analytics}{: Pandas, NumPy, Power BI} \
      \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent)}
     }}
  \end{itemize}
