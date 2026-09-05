@@ -51,6 +51,18 @@ jobs:
           cp cv/resume.pdf _site/resume.pdf
           cp site/index.html _site/index.html
 
+          # The resume has to stay on one page, and not only as a matter of
+          # taste: index.html shows page1.png on phones and in the in-app
+          # browsers LinkedIn opens links in, so anything that spills onto a
+          # second page is invisible to every mobile reader. Catch it here
+          # rather than on someone else's screen.
+          PAGES=$(pdfinfo cv/resume.pdf | awk '/^Pages:/ {print $2}')
+          echo "resume.pdf is $PAGES page(s)"
+          test "$PAGES" = "1" || {
+            echo "::error::resume.pdf is $PAGES pages; page 2 onward would never be shown on mobile. Trim resume.tex."
+            exit 1
+          }
+
           # page1.png is what phones actually see. Mobile browsers will not
           # render a PDF inside an <object> or <iframe>, so the page shows a
           # rendered image of the document instead of a viewer that would come

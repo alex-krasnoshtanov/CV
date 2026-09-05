@@ -97,10 +97,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Breda University of Applied Sciences}{Breda, Netherlands}
-      {Bachelor of Science in Applied Data Science \& Artificial Intelligence; 9.1/10 (4.0 GPA)}{Sep 2024 -- Present}
-      \resumeItemListStart
-        \resumeItem{BUas Bachelor Scholarship recipient}
-      \resumeItemListEnd
+      {BSc Applied Data Science \& Artificial Intelligence; 9.1/10 (4.0 GPA); BUas Bachelor Scholarship recipient}{Sep 2024 -- Present}
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
@@ -110,15 +107,15 @@
     \resumeProjectHeading
       {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
       \resumeItemListStart
-        \resumeItem{Built an MLOps platform for plant organ segmentation and root-tip detection: U-Net (ResNet-34 encoder) served behind an authenticated FastAPI backend with a Next.js frontend, PostgreSQL and Prometheus}
-        \resumeItem{Ran the full model lifecycle from Airflow DAGs -- data versioning and Azure ML training, drift detection on confidence, latency and error rate, and retraining driven by researcher feedback on flagged predictions}
-        \resumeItem{Owned the deployment and CI/CD tier: one codebase shipping to Docker Compose, on-premise Portainer and Azure Container Apps, with blue-green cutover, health-gated rollback and OIDC-federated cloud auth; CI gates 85\% coverage across 430 tests}
+        \resumeItem{Built an MLOps platform for plant organ segmentation and root-tip detection: U-Net (ResNet-34) behind an authenticated FastAPI backend, with a Next.js frontend, PostgreSQL and Prometheus}
+        \resumeItem{Ran the model lifecycle from Airflow DAGs: data versioning, Azure ML training, drift detection on confidence, latency and error rate, and retraining driven by researcher feedback on flagged predictions}
+        \resumeItem{Owned deployment and CI/CD: one codebase shipping to Docker Compose, on-premise Portainer and Azure Container Apps, with blue-green cutover, health-gated rollback and OIDC cloud auth; 85\% coverage gate, 430 tests}
       \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Dutch Sign Language Fingerspelling Trainer} $|$ \emph{Personal Project} $|$ \href{https://github.com/alex-krasnoshtanov/DSL-Learning}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/DSL-Learning/}{\underline{Docs}}}{May -- Sep 2026}
       \resumeItemListStart
-        \resumeItem{Real-time NGT alphabet trainer: MediaPipe hand landmarks feed a PyTorch residual MLP for the 24 static letters (95\% validation accuracy) and a bidirectional LSTM over 30-frame sequences for the two letters requiring motion (92\%)}
+        \resumeItem{Real-time NGT alphabet trainer: MediaPipe landmarks feed a PyTorch residual MLP for the 24 static letters (95\% validation) and a bidirectional LSTM over 30-frame sequences for the two needing motion (92\%)}
         \resumeItem{Sole author: FastAPI WebSocket backend streaming to a Next.js 16 / TypeScript frontend, bilingual EN/NL, containerised with CI and published documentation}
       \resumeItemListEnd
 
@@ -126,13 +123,13 @@
       {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual Project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
       \resumeItemListStart
         \resumeItem{Ranked \textbf{\#2 of 77} in Kaggle competition for plant root segmentation; selected to present results}
-        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot coordinate transform and OT-2 pipette control in a PyBullet simulation -- and benchmarked PID against a PPO reinforcement-learning controller}
+        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
       \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Emotion Analysis Pipeline} $|$ \emph{Group Project -- Dutch Media Client}}{Sep -- Nov 2025}
       \resumeItemListStart
-        \resumeItem{Developed production NLP pipeline processing 40-minute video episodes end-to-end: Faster-Whisper V3 transcription with VAD, multilingual emotion classification (6 Ekman categories plus neutral), and automated visualisation}
+        \resumeItem{Production NLP pipeline for a Dutch media client, processing 40-minute episodes end-to-end: Faster-Whisper V3 transcription with VAD, multilingual emotion classification and automated visualisation}
         \resumeItem{Fine-tuned DeBERTa and Russian transformer models on merged datasets augmented with Mistral-generated synthetic data; cross-validated across languages to stabilise multilingual predictions}
       \resumeItemListEnd
 
@@ -151,8 +148,8 @@
     \resumeProjectHeading
       {\textbf{BrabantHack 2026} $|$ \emph{Winner -- Demcon Deep Tech Track} $|$ \href{https://github.com/alex-krasnoshtanov/Detection-by-Shadow}{\underline{Code}}}{Apr 2026}
       \resumeItemListStart
-        \resumeItem{Won the Demcon track with a model that locates a pedestrian standing entirely outside the camera frame from the shadow they cast into it: \textbf{0.626 mean IoU} on the organisers' hidden test set, team of 3}
-        \resumeItem{Drove the accuracy by replacing direct four-corner box regression with targets defined relative to the frame edge -- side, distance from edge, width, height, y-centre -- on a ResNet-50 trunk fused with 19 hand-crafted shadow descriptors; 0.468 to 0.610 mean IoU on a held-out split, reproducible from the repository}
+        \resumeItem{Won the Demcon track with a model that locates a pedestrian standing entirely outside the camera frame from the shadow they cast into it: \textbf{0.626 mean IoU} on the organisers' hidden test set; team of 3}
+        \resumeItem{Drove the gain by re-describing the box relative to the frame edge it hides behind -- side, distance, width, height, y-centre -- on a ResNet-50 trunk fused with 19 shadow descriptors: 0.468 to 0.610 mean IoU, reproducible from the repository}
       \resumeItemListEnd
 
     \resumeProjectHeading
