@@ -54,5 +54,10 @@ either comes out at unexpected dimensions -- which is what would happen if the
 paper size in `resume.tex` ever changed without `index.html` being updated to
 match.
 
+The build also fails if `resume.pdf` is more than one page. Only page 1 is ever
+rendered to an image, so on a phone a second page would simply not exist, with
+nothing on screen to say so. Better to break the build than to publish half a
+CV.
+
 Nothing about this changes `resume.pdf`. It stays at the same URL and anyone who
 already links straight to it is unaffected.
