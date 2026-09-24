@@ -132,12 +132,14 @@
         \resumeItem{Sole author: FastAPI WebSocket backend streaming to a Next.js 16 / TypeScript frontend, bilingual EN/NL, containerised with CI and published documentation}
       \resumeItemListEnd
 
-    \resumeProjectHeading
-      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual Project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
-      \resumeItemListStart
-        \resumeItem{Ranked \textbf{\#2 of 77} in Kaggle competition for plant root segmentation; selected to present results}
-        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
-      \resumeItemListEnd
+    % NPEC Plant Phenotyping -- robotics/CV-heavy, less relevant for
+    % data-engineering or LLM-oriented roles. Uncomment for CV/robotics posts.
+%    \resumeProjectHeading
+%      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual Project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
+%      \resumeItemListStart
+%        \resumeItem{Ranked \textbf{\#2 of 77} in Kaggle competition for plant root segmentation; selected to present results}
+%        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
+%      \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Emotion Timeline} $|$ \emph{Solo rewrite of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
@@ -146,15 +148,13 @@
         \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
       \resumeItemListEnd
 
-    % MARBET, held out rather than deleted. The page fits one entry fewer than
-    % it used to, and for an ASML application this is the weakest of the set.
-    % For an NLP-heavy application it is the strongest: uncomment the block
-    % below and comment out something else to stay on one page.
-%    \resumeProjectHeading
-%      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-Person Sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
-%      \resumeItemListStart
-%        \resumeItem{Built self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and Gradio web interface; client deployed to production}
-%      \resumeItemListEnd
+    % MARBET -- strongest LLM/RAG bullet; brought back for data-engineering
+    % and LLM-oriented roles. Comment out for CV/robotics-heavy applications.
+    \resumeProjectHeading
+      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-Person Sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Built self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and Gradio web interface; client deployed to production}
+      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
@@ -182,12 +182,12 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Python, SQL, TypeScript} \\
-     \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers} \\
-     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
      \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, FAISS, Ollama, Gradio} \\
      \textbf{MLOps \& Cloud}{: Azure ML, Azure Container Apps, Airflow, MLflow, Prometheus, Trivy} \\
      \textbf{Infrastructure}{: Docker, Docker Compose, Portainer, GitHub Actions CI/CD, uv, Ruff, pytest} \\
      \textbf{Backend \& Data}{: FastAPI, Pydantic, PostgreSQL, SQLAlchemy, Alembic, Pandas, NumPy} \\
+     \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers} \\
+     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
      \textbf{Frontend}{: Next.js, React, Tailwind CSS, WebSockets} \\
      \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent)}
     }}
