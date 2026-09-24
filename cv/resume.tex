@@ -87,9 +87,13 @@
     \small
     \href{mailto:oleksiikrasnoshtanov@gmail.com}{\underline{oleksiikrasnoshtanov@gmail.com}} $|$
     +31 6 29746862 $|$
-    Tilburg, Netherlands $|$
-    \href{https://www.linkedin.com/in/oleksii-krasnoshtanov/}{\underline{LinkedIn}} $|$
-    \href{https://github.com/alex-krasnoshtanov}{\underline{GitHub}}
+    Tilburg, Netherlands \\ \vspace{2pt}
+    % The URLs are spelled out rather than hidden behind the words "LinkedIn"
+    % and "GitHub". Most ATS parsers read only the text layer and discard a
+    % PDF's link annotations, which would leave a parsed copy of this CV with
+    % no reachable address on it at all. Still clickable for a human reader.
+    \href{https://www.linkedin.com/in/oleksii-krasnoshtanov/}{\underline{linkedin.com/in/oleksii-krasnoshtanov}} $|$
+    \href{https://github.com/alex-krasnoshtanov}{\underline{github.com/alex-krasnoshtanov}}
 \end{center}
 
 %-----------EDUCATION-----------
@@ -103,6 +107,15 @@
 %-----------PROJECTS-----------
 \section{Projects \& Technical Work}
   \resumeSubHeadingListStart
+
+    % Week 4 of this one as of Sep 2026 -- no concrete technical contribution
+    % to cite yet, just the problem framing. Revisit this bullet once there's
+    % an actual approach, dataset, or result to point to.
+    \resumeProjectHeading
+      {\textbf{Measurement Trust Project} $|$ \emph{Client project -- CEVA Logistics, BUas; team of 4}}{Sep 2026 -- Jan 2027}
+      \resumeItemListStart
+        \resumeItem{Data engineer on a client-facing project addressing inconsistent item measurement in bol warehouse fulfilment, where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
+      \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
@@ -127,17 +140,21 @@
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{Emotion Analysis Pipeline} $|$ \emph{Group Project -- Content Intelligence Agency}}{Sep -- Nov 2025}
+      {\textbf{Emotion Timeline} $|$ \emph{Solo rewrite of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
       \resumeItemListStart
-        \resumeItem{Production NLP pipeline for a Dutch media client, processing 40-minute episodes end-to-end: Faster-Whisper V3 transcription with VAD, multilingual emotion classification and automated visualisation}
-        \resumeItem{Fine-tuned DeBERTa and Russian transformer models on merged datasets augmented with Mistral-generated synthetic data; cross-validated across languages to stabilise multilingual predictions}
+        \resumeItem{Solo rebuild turning a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
+        \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
       \resumeItemListEnd
 
-    \resumeProjectHeading
-      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-Person Sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
-      \resumeItemListStart
-        \resumeItem{Built self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and Gradio web interface; client deployed to production}
-      \resumeItemListEnd
+    % MARBET, held out rather than deleted. The page fits one entry fewer than
+    % it used to, and for an ASML application this is the weakest of the set.
+    % For an NLP-heavy application it is the strongest: uncomment the block
+    % below and comment out something else to stay on one page.
+%    \resumeProjectHeading
+%      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-Person Sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
+%      \resumeItemListStart
+%        \resumeItem{Built self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and Gradio web interface; client deployed to production}
+%      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
