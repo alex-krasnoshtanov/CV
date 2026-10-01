@@ -121,6 +121,18 @@
         \resumeItem{Data engineer on a client-facing project addressing inconsistent item measurement in bol warehouse fulfilment, where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
       \resumeItemListEnd
 
+    % Philips (AI & Automation, Group Security): projects ordered by fit, not
+    % date. MARBET is in for on-premise handling of confidential data and for the
+    % grounding bullet (sources shown, explicit fallback) -- the posting asks for
+    % explainability, traceability and human review. Short version plus that one
+    % bullet; the retrieval-tuning bullet is noise for a security audience.
+    \resumeProjectHeading
+      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-person sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Built a self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and Gradio web interface; client deployed to production}
+        \resumeItem{Grounded by construction: answers only from retrieved context, each returned with the source chunks and their relevance, and an explicit fallback when the documents do not cover the question}
+      \resumeItemListEnd
+
     \resumeProjectHeading
       {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
       \resumeItemListStart
@@ -130,11 +142,21 @@
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{Dutch Sign Language Fingerspelling Trainer} $|$ \emph{Solo rebuild of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/DSL-Learning}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/DSL-Learning/}{\underline{Docs}}}{May -- Sep 2026}
+      {\textbf{Emotion Timeline} $|$ \emph{Solo rebuild of a group project for Content Intelligence Agency} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
       \resumeItemListStart
-        \resumeItem{Real-time NGT alphabet trainer: MediaPipe landmarks feed a PyTorch residual MLP for the 24 static letters (95\% validation) and a bidirectional LSTM over 30-frame sequences for the two needing motion (92\%)}
-        \resumeItem{Sole author: FastAPI WebSocket backend streaming to a Next.js 16 / TypeScript frontend, bilingual EN/NL, containerised with CI and published documentation}
+        \resumeItem{Turned a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
+        \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
       \resumeItemListEnd
+
+    % DSL held out for Philips to keep one page with MARBET in: a strong solo
+    % full-stack build, but the least related to assessment workflows or data
+    % evaluation. First to come back if anything else is cut.
+%    \resumeProjectHeading
+%      {\textbf{Dutch Sign Language Fingerspelling Trainer} $|$ \emph{Solo rebuild of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/DSL-Learning}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/DSL-Learning/}{\underline{Docs}}}{May -- Sep 2026}
+%      \resumeItemListStart
+%        \resumeItem{Real-time NGT alphabet trainer: MediaPipe landmarks feed a PyTorch residual MLP for the 24 static letters (95\% validation) and a bidirectional LSTM over 30-frame sequences for the two needing motion (92\%)}
+%        \resumeItem{Sole author: FastAPI WebSocket backend streaming to a Next.js 16 / TypeScript frontend, bilingual EN/NL, containerised with CI and published documentation}
+%      \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual project for NPEC, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
@@ -149,13 +171,6 @@
 %      \resumeItemListStart
 %        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle root-segmentation competition and selected to present; built the full loop from U-Net segmentation and root-tip extraction to OT-2 pipette control in PyBullet, PID benchmarked against PPO}
 %      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{Emotion Timeline} $|$ \emph{Solo rebuild of a group project for Content Intelligence Agency} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
-      \resumeItemListStart
-        \resumeItem{Turned a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
-        \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
-      \resumeItemListEnd
 
     % MARBET, held out rather than deleted: the page fits one entry fewer than
     % it used to, and for vision/robotics roles it is the weakest of the set.
@@ -204,17 +219,19 @@
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
+ % Philips: data handling and monitoring/evaluation tooling lead, specialisms
+ % (vision, NLP) follow -- the role is general AI & automation, not CV or NLP.
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Python, SQL, TypeScript} \\
      \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers} \\
-     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
-     \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, FAISS, Ollama, Gradio} \\
+     \textbf{Backend \& Data}{: FastAPI, Pydantic, PostgreSQL, SQLAlchemy, Alembic, Pandas, NumPy} \\
      \textbf{MLOps \& Cloud}{: Azure ML, Azure Container Apps, Airflow, MLflow, Prometheus, Trivy} \\
      \textbf{Infrastructure}{: Docker, Docker Compose, Portainer, GitHub Actions CI/CD, uv, Ruff, pytest} \\
-     \textbf{Backend \& Data}{: FastAPI, Pydantic, PostgreSQL, SQLAlchemy, Alembic, Pandas, NumPy} \\
+     \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, FAISS, Ollama, Gradio} \\
+     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
      \textbf{Frontend}{: Next.js, React, Tailwind CSS, WebSockets} \\
-     \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent)}
+     \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent), Polish (basic)}
     }}
  \end{itemize}
 
