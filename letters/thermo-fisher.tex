@@ -1,0 +1,114 @@
+%-------------------------
+% Cover letter -- Thermo Fisher Scientific, Gen AI Assistant internship (Eindhoven)
+%
+% Companion to cv/resume.tex. Same fonts and the same header block, but normal
+% 1in margins: the resume's 7.5in measure is fine for bullets and far too wide
+% for running prose.
+%
+% Build:  tectonic letters/thermo-fisher.tex
+% Not built by CI -- .github/workflows/build.yml only watches cv/ and site/,
+% so editing a letter does not redeploy the Pages site.
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+% Deliberately no fontenc: T1 + Latin Modern emits real ligature glyphs, so
+% "Scientific" and "profiling" came out of the PDF as U+FB01 and were unreadable
+% to a text extractor. Default OT1 Computer Modern -- what resume.tex uses --
+% extracts as plain ASCII. There are no accented characters in this letter.
+\usepackage[english]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+
+\urlstyle{same}
+\pagestyle{empty}
+\raggedright
+
+% ATS-friendly: ensure PDF is machine-readable. pdfTeX-only, so guarded -- the
+% file still compiles under tectonic/XeTeX for a local check.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\begin{document}
+
+%-----------HEADING-----------
+% Mirrors cv/resume.tex so the two documents read as one application.
+\begin{center}
+    \textbf{\Huge \scshape Oleksii Krasnoshtanov} \\ \vspace{2pt}
+    \small
+    \href{mailto:oleksiikrasnoshtanov@gmail.com}{\underline{oleksiikrasnoshtanov@gmail.com}} $|$
+    +31 6 29746862 $|$
+    Tilburg, Netherlands $|$
+    \href{https://www.linkedin.com/in/oleksii-krasnoshtanov/}{\underline{LinkedIn}} $|$
+    \href{https://github.com/alex-krasnoshtanov}{\underline{GitHub}}
+\end{center}
+
+\vspace{6pt}
+\hrule
+\vspace{14pt}
+
+%-----------ADDRESS BLOCK-----------
+\today
+
+\vspace{10pt}
+
+Thermo Fisher Scientific \\
+Materials \& Structural Analysis, Engineering \\
+Eindhoven, Netherlands
+
+\vspace{10pt}
+
+\textbf{Re: Gen AI Assistant Internship, Engineering --- Eindhoven}
+
+\vspace{4pt}
+
+%-----------BODY-----------
+Dear Hiring Team,
+
+I am writing about the Gen AI Assistant internship with the Engineering team in
+Eindhoven --- profiling Docgraph for retrieval time, evaluating existing
+guardrail implementations, reducing hallucinations, and moving a proof of
+concept into the MSD R\&D environment.
+
+In 2025 I built a self-hosted retrieval assistant for MARBET, a corporate events
+agency, in a two-person sprint; they run it in production. It answers from the
+client's own confidential documents, which is why it runs on-premise: Llama 3.3
+70B (q5\_K\_M) through Ollama, orchestrated with LangChain over
+mxbai-embed-large embeddings in FAISS. Most of the effort went into answer
+quality rather than the model. I chunked semantically on paragraph and then
+sentence boundaries instead of fixed cuts, used two-stage fetch-then-filter
+retrieval, returned the source passages with every answer, and made the
+assistant say plainly when the documents did not cover a question rather than
+fill the gap. A guided assistant for Smart EPU has the same failure mode with
+higher stakes: a confident wrong answer about which squares or foil holes to
+collect from costs a user a microscope session, while an honest ``not covered''
+costs them a click.
+
+The on-prem constraint is part of why the work appeals to me. Your software
+lives on customer infrastructure --- Embedded CryoSPARC Live on the microscope
+hardware, Athena inside an existing on-premises environment --- and a pharma
+customer's structures are not going to a third-party API. I have shipped into
+that shape: on an MLOps platform for NPEC I ran one codebase to both on-premise
+Portainer and Azure Container Apps, with blue-green cutover and health-gated
+rollback. Getting a proof of concept to survive the move into a controlled R\&D
+environment is a specific skill, and it is the one I expect would be most
+immediately useful.
+
+Where I would want to start is measurement: a labelled question set over the
+real documentation, retrieval recall and latency measured separately from
+generation, so that every later change to chunking, reranking or guardrails can
+be argued with a number instead of an impression. It is also the prerequisite
+for the hallucination work.
+
+I am available from February 2027 and would be glad to talk through any of this.
+
+\vspace{10pt}
+
+Kind regards, \\
+\vspace{2pt}
+Oleksii Krasnoshtanov
+
+\end{document}
