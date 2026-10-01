@@ -26,6 +26,29 @@ Or just save in VS Code with LaTeX Workshop installed.
 - `site/index.html` -- the page served at `/CV/`; copied verbatim at build time
 - `.github/workflows/build.yml` -- auto-compile + deploy
 
+## Branches
+
+`main` is the general CV, the one published at the link above. Every project,
+bullet and skills line that could appear on any version lives in `resume.tex`
+here, with the ones not shown on the general version kept as comments.
+
+Each job application gets its own `applications/<company>` branch cut from
+`main`, which only toggles and reorders that material. CI builds `main` only, so
+pushing an application branch never touches the site; the PDF for an
+application is the locally compiled `cv/resume.pdf` on its branch. A change
+that is true for every audience goes on `main`, not on a branch.
+
+## Cover letters
+
+A cover letter is per-application, so it lives on that application's branch as
+`letters/<company>.tex`, never on `main`. It shares the resume's header and fonts
+with normal 1in margins, and CI ignores it. Build by hand:
+
+```bash
+cd letters
+pdflatex <company>.tex
+```
+
 ## Why there is a page at `/CV/` and not just the PDF
 
 Link a bare `.pdf` on LinkedIn and it renders as a plain text link: a PDF carries

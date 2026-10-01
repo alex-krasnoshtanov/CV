@@ -17,7 +17,6 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -43,8 +42,13 @@
   \vspace{-5pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% ATS-friendly: ensure PDF is machine-readable
-\pdfgentounicode=1
+% ATS-friendly: ensure PDF is machine-readable. Both lines are pdfTeX-only, so
+% they are guarded -- pdflatex (CI and local MiKTeX) takes them, and the file
+% still compiles under tectonic/XeTeX if that is all a machine has.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 
 %-------------------------------------------
 % Custom commands
@@ -133,27 +137,48 @@
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual Project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
+      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual project for NPEC, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
       \resumeItemListStart
-        \resumeItem{Ranked \textbf{\#2 of 77} in Kaggle competition for plant root segmentation; selected to present results}
+        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle competition for plant root segmentation; selected to present results}
         \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
       \resumeItemListEnd
 
+    % NPEC compressed to one bullet, for versions that need the line: it overlaps
+    % CV Pipeline (same institution, same U-Net, same roots), and the ranking and
+    % robotics breadth both survive. Swap it in for the two bullets above.
+%      \resumeItemListStart
+%        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle root-segmentation competition and selected to present; built the full loop from U-Net segmentation and root-tip extraction to OT-2 pipette control in PyBullet, PID benchmarked against PPO}
+%      \resumeItemListEnd
+
     \resumeProjectHeading
-      {\textbf{Emotion Timeline} $|$ \emph{Solo rewrite of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
+      {\textbf{Emotion Timeline} $|$ \emph{Solo rebuild of a group project for Content Intelligence Agency} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
       \resumeItemListStart
-        \resumeItem{Solo rebuild turning a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
+        \resumeItem{Turned a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
         \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
       \resumeItemListEnd
 
-    % MARBET, held out rather than deleted. The page fits one entry fewer than
-    % it used to, and for an ASML application this is the weakest of the set.
-    % For an NLP-heavy application it is the strongest: uncomment the block
-    % below and comment out something else to stay on one page.
+    % MARBET, held out rather than deleted: the page fits one entry fewer than
+    % it used to, and for vision/robotics roles it is the weakest of the set.
+    % For LLM, NLP, privacy or on-premise roles it is the strongest: uncomment
+    % one of the two versions below and comment out something else to stay on
+    % one page.
+    %
+    % Short version, one bullet:
 %    \resumeProjectHeading
-%      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-Person Sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
+%      {\textbf{MARBET Event Support Chatbot} $|$ \emph{2-person sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
 %      \resumeItemListStart
 %        \resumeItem{Built self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and Gradio web interface; client deployed to production}
+%      \resumeItemListEnd
+    %
+    % Headline version, three bullets. The third (grounding, sources, fallback)
+    % also stands alone under the short version for roles that ask about
+    % explainability or traceability rather than LLMs as such.
+%    \resumeProjectHeading
+%      {\textbf{MARBET Event Assistant -- On-Premise RAG Chatbot} $|$ \emph{2-person sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
+%      \resumeItemListStart
+%        \resumeItem{Self-hosted RAG assistant answering event questions from the client's own confidential documents, built in a 2-person sprint and deployed to their production: Llama 3.3 70B (q5\_K\_M) served on-premise through Ollama}
+%        \resumeItem{Retrieval built for answer quality: semantic chunking on paragraph then sentence boundaries (800/200) over fixed cuts, mxbai-embed-large embeddings in FAISS, two-stage fetch-then-filter (fetch\_k 20, top-k 8)}
+%        \resumeItem{Grounded by construction: answers only from retrieved context, each returned with the source chunks and their relevance, and an explicit fallback when the documents do not cover the question}
 %      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -172,7 +197,7 @@
     \resumeProjectHeading
       {\textbf{HERE Technologies Hackathon} $|$ \emph{RDM Verification Challenge}}{May 2026}
       \resumeItemListStart
-        \resumeItem{Built XGBoost classification pipeline for Restricted Driving Manoeuvre verification combining probe GPS features with Mapillary and OSM geospatial signals; designed synthetic data scrambling for NDA-compliant delivery}
+        \resumeItem{Built an XGBoost classifier for Restricted Driving Manoeuvre verification combining probe GPS features with Mapillary and OSM geospatial signals; designed synthetic data scrambling for NDA-compliant delivery}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -192,5 +217,11 @@
      \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent)}
     }}
  \end{itemize}
+
+% Variant for LLM-heavy roles: pull GenAI out of "NLP & Audio" into its own
+% leading line, so a recruiter scanning for LLM keywords finds them first.
+% Replace the ML / Deep Learning and NLP & Audio lines with these two:
+%     \textbf{Generative AI \& LLMs}{: LangChain, Ollama, FAISS, Llama 3.3, RAG, semantic chunking, prompt grounding, Gradio} \\
+%     \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers, Faster-Whisper} \\
 
 \end{document}
