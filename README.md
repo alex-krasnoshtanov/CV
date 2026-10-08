@@ -41,12 +41,13 @@ that is true for every audience goes on `main`, not on a branch.
 ## Cover letters
 
 A cover letter is per-application, so it lives on that application's branch as
-`letters/<company>.tex`, never on `main`. It shares the resume's header and fonts
-with normal 1in margins, and CI ignores it. Build by hand:
+`letters/<company>-cover-letter.tex`, never on `main`, so the PDF it builds is
+`<company>-cover-letter.pdf`. It shares the resume's header and fonts with normal
+1in margins, and CI ignores it. Build by hand:
 
 ```bash
 cd letters
-pdflatex <company>.tex
+pdflatex <company>-cover-letter.tex
 ```
 
 ## Why there is a page at `/CV/` and not just the PDF
