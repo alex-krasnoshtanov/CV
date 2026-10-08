@@ -61,3 +61,21 @@ CV.
 
 Nothing about this changes `resume.pdf`. It stays at the same URL and anyone who
 already links straight to it is unaffected.
+
+## Line endings and the pre-commit hook
+
+`.gitattributes` keeps text files LF on every machine and marks PDFs and PNGs
+as binary, so a Windows checkout never produces line-ending-only diffs.
+
+`.githooks/pre-commit` refuses a commit that stages `cv/resume.tex` or a
+`letters/*-cover-letter.tex` without its freshly rebuilt PDF, and one whose
+`cv/resume.pdf` is more than one page (checked with `pdfinfo`, which MiKTeX and
+TeX Live both ship). CI only builds `main`, so on application branches this is
+the only check on the PDF that actually gets sent. Git does not enable hooks
+from a clone by itself; turn it on once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+`git commit --no-verify` skips it for a single commit.
