@@ -1,0 +1,124 @@
+%-------------------------
+% Cover letter -- Philips, Intern AI Application Developer
+% (Healthcare Consultancy Service, Best). Lives on this branch only.
+%
+% Shares the resume's class, fonts and header so the two read as one set;
+% margins are 1in at the sides (0.75in top and bottom) rather than the
+% resume's tightened ones. Build: cd letters; pdflatex philips-cover-letter.tex
+%
+% Every claim below is taken from cv/resume.tex on this branch. Bold
+% [BRACKETED] text is a placeholder that prints visibly on purpose, so it
+% cannot slip into a sent copy unnoticed -- fill or delete each one.
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+% 1in sides as the README specifies; top and bottom at 0.75in so the filled-in
+% motivation sentence still leaves the letter on one page.
+\usepackage[left=1in,right=1in,top=0.75in,bottom=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+
+\urlstyle{same}
+\pagestyle{empty}
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Same guard as resume.tex: machine-readable text under pdflatex, still
+% compiles under XeTeX/tectonic.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\newcommand{\fillin}[1]{\textbf{[#1]}}
+
+\begin{document}
+
+%-----------HEADING (identical to resume.tex)-----------
+\begin{center}
+    \textbf{\Huge \scshape Oleksii Krasnoshtanov} \\ \vspace{1pt}
+    \small
+    \href{mailto:oleksiikrasnoshtanov@gmail.com}{\underline{oleksiikrasnoshtanov@gmail.com}} $|$
+    +31 6 29746862 $|$
+    Tilburg, Netherlands \\ \vspace{2pt}
+    \href{https://www.linkedin.com/in/oleksii-krasnoshtanov/}{\underline{linkedin.com/in/oleksii-krasnoshtanov}} $|$
+    \href{https://github.com/alex-krasnoshtanov}{\underline{github.com/alex-krasnoshtanov}}
+\end{center}
+% The resume's section rule, reused as the header divider.
+\vspace{-4pt}\noindent\rule{\textwidth}{0.4pt}
+
+\today
+
+Philips -- Healthcare Consultancy Service \\
+Best, Netherlands
+
+% Replace with the recruiter's or team lead's name if the portal shows one.
+Dear Hiring Manager,
+
+I am applying for the Intern AI Application Developer position in the
+Healthcare Consultancy Service team. The role asks for AI tools that
+non-technical colleagues can pick up and rely on, delivered as something
+pilotable rather than a proof of concept. Most of what I have built during my
+studies fits that description, and it is the work I want to do more of.
+
+% Why Philips: museum visit and Brainport are the specifics; the transformation
+% line links Philips' history to the healthcare team this role sits in.
+Philips is a company whose values I share, and visiting the Philips Museum in
+Eindhoven made that even more concrete: more than a century of reinventing what it makes,
+from light bulbs to health technology. At BrabantHack 2026 I also saw the
+Brainport ecosystem that grew around Philips, and I want to work for a company
+that builds for the long term.
+
+In a two-person sprint I built a self-hosted RAG assistant that answers event
+questions from a client's confidential documents through a Gradio web
+interface; the client deployed it to production. Reliability came
+from constraining the model rather than trusting it: answers are drawn only
+from retrieved context, each is returned with its source passages and their
+relevance, and the assistant says so explicitly when the documents do not
+cover a question.
+
+On a five-person platform project I owned deployment and CI/CD for a FastAPI
+and Next.js application:
+one codebase shipping to Docker Compose, on-premise Portainer and Azure
+Container Apps, with blue-green cutover, health-gated rollback, an 85\%
+coverage gate and 430 tests. Separately, I wrote a real-time sign-language
+trainer end to end on my own, from the PyTorch models to a FastAPI WebSocket
+backend and a bilingual Next.js frontend.
+
+The consultancy side of the role matches my current project. As data engineer
+on the Measurement Trust Project, I work on inconsistent item measurement at
+bol's fulfilment centres BFC1/2, which bol owns and CEVA Logistics operates.
+Much of the work so far has been with people rather than code: obtaining
+partly anonymised data from both CEVA and bol, working with Logistore and other
+third parties, writing business requirements documents, and keeping proposals
+compliant with GDPR and ethics requirements while making them understandable
+to non-technical stakeholders.
+
+% The posting asks for a Master's student; this addresses it head-on rather
+% than hoping it goes unnoticed. Delete if you would rather raise it in an
+% interview, or if the recruiter has already said a Bachelor's is fine.
+I should be clear that I am a third-year Bachelor's student (9.1/10,
+scholarship), not the Master's student the posting describes, and would ask
+you to weigh that against a record of shipping working systems to real users.
+
+% Availability: the posting wants ASAP, 32--40 h/week, at least 6 months, and
+% 3 office days a week. The resume shows Measurement Trust running to Jan
+% 2027, so a reader will check this line -- make it exact.
+I am available from begining of 2027 for 6 month,
+40 hours per week, and can work from the Best office
+up to 5 days a week.
+
+% Agentic frameworks (LangChain agents, CrewAI) are listed as a plus. Nothing
+% in the resume covers multi-step agents, so nothing is claimed. Add a sentence
+% here only if you have real agent work to point to.
+
+I would welcome the chance to discuss how I could contribute to the team.
+Thank you for your time and consideration.
+
+Kind regards,
+
+Oleksii Krasnoshtanov
+
+\end{document}
