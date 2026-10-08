@@ -23,19 +23,19 @@ Or just save in VS Code with LaTeX Workshop installed.
 ## Structure
 
 - `cv/resume.tex` -- source file
-- `letters/*.tex` -- one cover letter per application, built locally only
+- `letters/*-cover-letter.tex` -- one cover letter per application, built locally only
 - `site/index.html` -- the page served at `/CV/`; copied verbatim at build time
 - `.github/workflows/build.yml` -- auto-compile + deploy
 
 ## Cover letters
 
-`letters/` holds one `.tex` per application. They share the resume's header and
+`letters/` holds one `<company>-cover-letter.tex` per application, which builds to `<company>-cover-letter.pdf`. They share the resume's header and
 fonts but use normal 1in margins, and they are **not** built or published by CI
 -- the workflow only watches `cv/` and `site/`, so editing a letter never
 redeploys the site. Build one by hand:
 
 ```bash
-tectonic letters/thermo-fisher.tex
+tectonic letters/thermo-fisher-cover-letter.tex
 ```
 
 ## Why there is a page at `/CV/` and not just the PDF
