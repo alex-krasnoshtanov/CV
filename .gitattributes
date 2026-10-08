@@ -1,0 +1,7 @@
+# Store and check out text as LF on every machine, whatever core.autocrlf says,
+# so a Windows editor never turns a one-line edit into a whole-file diff.
+* text=auto eol=lf
+
+# Compiled output and images: never diff, never convert line endings.
+*.pdf binary
+*.png binary
