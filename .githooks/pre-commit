@@ -1,0 +1,42 @@
+#!/bin/sh
+# Refuse to commit a resume or cover letter whose PDF is stale, and a resume
+# that runs past one page. CI only builds main; on application branches the
+# committed PDF is the one that gets sent, so this is the only check it gets.
+#
+# Enable once per clone:  git config core.hooksPath .githooks
+# Skip for one commit:    git commit --no-verify
+
+fail=0
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+
+for tex in $(printf '%s\n' "$staged" | grep -E '^(cv/resume|letters/[^/]+-cover-letter)\.tex$'); do
+  pdf="${tex%.tex}.pdf"
+  if ! printf '%s\n' "$staged" | grep -qxF "$pdf"; then
+    echo "pre-commit: $tex is staged but $pdf is not -- rebuild and stage it." >&2
+    fail=1
+  elif [ "$tex" -nt "$pdf" ]; then
+    echo "pre-commit: $pdf is older than $tex -- rebuild it." >&2
+    fail=1
+  elif ! git diff --quiet -- "$pdf"; then
+    echo "pre-commit: $pdf was rebuilt after staging -- git add it again." >&2
+    fail=1
+  fi
+done
+
+# Check the staged blob, not the working copy: that is what gets committed.
+if printf '%s\n' "$staged" | grep -qxF cv/resume.pdf; then
+  if command -v pdfinfo >/dev/null 2>&1; then
+    tmp=$(mktemp)
+    git show :cv/resume.pdf > "$tmp"
+    pages=$(pdfinfo "$tmp" 2>/dev/null | awk '/^Pages:/ {print $2}')
+    rm -f "$tmp"
+    if [ "$pages" != "1" ]; then
+      echo "pre-commit: cv/resume.pdf is ${pages:-?} pages; it must be 1 -- trim resume.tex." >&2
+      fail=1
+    fi
+  else
+    echo "pre-commit: pdfinfo not found, skipping the one-page check." >&2
+  fi
+fi
+
+exit $fail
