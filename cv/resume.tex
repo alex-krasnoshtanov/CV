@@ -112,23 +112,38 @@
 \section{Projects \& Technical Work}
   \resumeSubHeadingListStart
 
-    % Week 4 of this one as of Sep 2026 -- no concrete technical contribution
-    % to cite yet, just the problem framing. Revisit this bullet once there's
-    % an actual approach, dataset, or result to point to.
+    % Oct 2026: stakeholder and requirements work is concrete (data access from
+    % both companies, BRDs, GDPR/ethics review); there is still no technical
+    % result. Revisit once there's an approach, model, or measured outcome --
+    % add it as its own bullet, don't stretch the stakeholder wording to imply one.
+    % Philips: two-bullet version, leading the section -- a consultancy role for
+    % non-technical business users, and this is the multi-stakeholder evidence.
     \resumeProjectHeading
       {\textbf{Measurement Trust Project} $|$ \emph{Client project -- CEVA Logistics, BUas; team of 4}}{Sep 2026 -- Jan 2027}
       \resumeItemListStart
-        \resumeItem{Data engineer on a client-facing project addressing inconsistent item measurement in bol warehouse fulfilment, where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
+        \resumeItem{Data engineer on inconsistent item measurement at bol's BFC1/2 fulfilment centres (bol-owned, CEVA-operated), where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
+        \resumeItem{Obtained partly anonymised data from CEVA and bol, working with Logistore and third parties; co-wrote BRDs, kept proposals GDPR- and ethics-compliant, fit for client infrastructure and clear to non-technical stakeholders}
       \resumeItemListEnd
+    % Merged one-bullet version, as on main (about two lines shorter):
+%      \resumeItemListStart
+%        \resumeItem{Data engineer on size-group misclassification at bol's BFC1/2 (bol-owned, CEVA-operated), driving fee disputes and seller re-measurement requests; obtained partly anonymised data from CEVA and bol, liaised with Logistore and third parties, wrote BRDs keeping proposals GDPR-compliant, ethical and clear to non-technical stakeholders}
+%      \resumeItemListEnd
+    % Short version, one bullet, for roles where stakeholder work is not the point:
+%      \resumeItemListStart
+%        \resumeItem{Data engineer on a client-facing project addressing inconsistent item measurement in bol warehouse fulfilment, where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
+%      \resumeItemListEnd
 
-    % Philips (AI Application Developer): projects ordered by fit -- shipped
-    % apps that non-technical people actually used come first. MARBET in its
-    % headline form, minus the retrieval bullet: an LLM app with a UI, in client
-    % production; the grounding bullet is the closest thing to "output validation".
+    % Philips (AI Application Developer): after Measurement Trust, projects
+    % ordered by fit -- shipped apps that non-technical people actually used
+    % come first. MARBET's first bullet names the stack and the Gradio UI
+    % (wording from the master's short version) rather than the quantisation;
+    % the grounding bullet is the closest thing to "output validation".
     \resumeProjectHeading
       {\textbf{MARBET Event Assistant -- On-Premise RAG Chatbot} $|$ \emph{2-person sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
       \resumeItemListStart
-        \resumeItem{Self-hosted RAG assistant answering event questions from the client's own confidential documents, built in a 2-person sprint and deployed to their production: Llama 3.3 70B (q5\_K\_M) served on-premise through Ollama}
+        \resumeItem{Self-hosted RAG assistant answering event questions from the client's confidential documents, in their production: Llama 3.3 70B via Ollama, LangChain, FAISS, multi-format ingestion and a Gradio web interface}
+        % Headline first bullet, for roles that care about on-premise model serving:
+%        \resumeItem{Self-hosted RAG assistant answering event questions from the client's own confidential documents, built in a 2-person sprint and deployed to their production: Llama 3.3 70B (q5\_K\_M) served on-premise through Ollama}
         % Retrieval-tuning bullet held out to keep one page: RAG is already
         % carried by the other two bullets and the skills line. Restore it if
         % the role is retrieval-heavy rather than app-building.
@@ -174,7 +189,9 @@
 %        \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
 %      \resumeItemListEnd
 
-    % MARBET, held out rather than deleted: the page fits one entry fewer than
+    % MARBET variants as on main. On this branch MARBET is active (second entry
+    % above), so these are reference copies only -- don't uncomment them here.
+    % On main they are held out: the page fits one entry fewer than
     % it used to, and for vision/robotics roles it is the weakest of the set.
     % For LLM, NLP, privacy or on-premise roles it is the strongest: uncomment
     % one of the two versions below and comment out something else to stay on
@@ -232,8 +249,10 @@
      \textbf{Frontend}{: Next.js, React, Tailwind CSS, WebSockets} \\
      \textbf{MLOps \& Cloud}{: Azure ML, Azure Container Apps, Airflow, MLflow, Prometheus, Trivy} \\
      \textbf{Infrastructure}{: Docker, Docker Compose, Portainer, GitHub Actions CI/CD, uv, Ruff, pytest} \\
-     \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers, Faster-Whisper} \\
-     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
+     \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers, Faster-Whisper, OpenCV} \\
+     % Computer Vision folded into the line above to fit the second Measurement
+     % Trust bullet; U-Net, MediaPipe and PyBullet still appear in the project bullets.
+%     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
      \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent), Polish (basic)}
     }}
  \end{itemize}
