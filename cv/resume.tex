@@ -112,6 +112,28 @@
 \section{Projects \& Technical Work}
   \resumeSubHeadingListStart
 
+    % ASML (AI-driven software quality): ordered by fit, not recency. CV
+    % Pipeline leads -- tests, coverage gate, CI/CD, drift detection and
+    % feedback-driven retraining are the closest evidence to software quality
+    % engineering; its third bullet is reordered to lead with the test metrics.
+    \resumeProjectHeading
+      {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
+      \resumeItemListStart
+        \resumeItem{Built an MLOps platform for plant organ segmentation and root-tip detection: U-Net (ResNet-34) behind an authenticated FastAPI backend, with a Next.js frontend, PostgreSQL and Prometheus}
+        \resumeItem{Ran the model lifecycle from Airflow DAGs: data versioning, Azure ML training, drift detection on confidence, latency and error rate, and retraining driven by researcher feedback on flagged predictions}
+        \resumeItem{Owned deployment and CI/CD behind an 85\% coverage gate and 430 tests: one codebase shipping to Docker Compose, on-premise Portainer and Azure Container Apps, with blue-green cutover, health-gated rollback and OIDC cloud auth}
+      \resumeItemListEnd
+
+    % ASML: MARBET second -- the only LLM project, and the grounding bullet
+    % (source chunks returned, explicit fallback) is the closest evidence for
+    % trustworthy issue assessment. Stack bullet as on the Philips branch.
+    \resumeProjectHeading
+      {\textbf{MARBET Event Assistant -- On-Premise RAG Chatbot} $|$ \emph{2-person sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Self-hosted RAG assistant answering event questions from the client's confidential documents, in their production: Llama 3.3 70B via Ollama, LangChain, FAISS, multi-format ingestion and a Gradio web interface}
+        \resumeItem{Grounded by construction: answers only from retrieved context, each returned with the source chunks and their relevance, and an explicit fallback when the documents do not cover the question}
+      \resumeItemListEnd
+
     % Oct 2026: stakeholder and requirements work is concrete (data access from
     % both companies, BRDs, GDPR/ethics review); there is still no technical
     % result. Revisit once there's an approach, model, or measured outcome --
@@ -132,14 +154,6 @@
 %      \resumeItemListStart
 %        \resumeItem{Data engineer on a client-facing project addressing inconsistent item measurement in bol warehouse fulfilment, where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
 %      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
-      \resumeItemListStart
-        \resumeItem{Built an MLOps platform for plant organ segmentation and root-tip detection: U-Net (ResNet-34) behind an authenticated FastAPI backend, with a Next.js frontend, PostgreSQL and Prometheus}
-        \resumeItem{Ran the model lifecycle from Airflow DAGs: data versioning, Azure ML training, drift detection on confidence, latency and error rate, and retraining driven by researcher feedback on flagged predictions}
-        \resumeItem{Owned deployment and CI/CD: one codebase shipping to Docker Compose, on-premise Portainer and Azure Container Apps, with blue-green cutover, health-gated rollback and OIDC cloud auth; 85\% coverage gate, 430 tests}
-      \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Dutch Sign Language Fingerspelling Trainer} $|$ \emph{Solo rebuild of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/DSL-Learning}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/DSL-Learning/}{\underline{Docs}}}{May -- Sep 2026}
@@ -163,14 +177,19 @@
 %        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
 %      \resumeItemListEnd
 
-    \resumeProjectHeading
-      {\textbf{Emotion Timeline} $|$ \emph{Solo rebuild of a group project for Content Intelligence Agency} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
-      \resumeItemListStart
-        \resumeItem{Turned a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
-        \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
-      \resumeItemListEnd
+    % ASML: Emotion Timeline held out to make room for MARBET (main has under a
+    % line of slack). First back in if space opens -- the error analysis on
+    % where the two models disagree is relevant to evaluation-heavy roles.
+%    \resumeProjectHeading
+%      {\textbf{Emotion Timeline} $|$ \emph{Solo rebuild of a group project for Content Intelligence Agency} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
+%      \resumeItemListStart
+%        \resumeItem{Turned a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
+%        \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
+%      \resumeItemListEnd
 
-    % MARBET, held out rather than deleted: the page fits one entry fewer than
+    % MARBET variants as on main. On this branch MARBET is active (second entry
+    % above), so these are reference copies only -- don't uncomment them here.
+    % On main they are held out: the page fits one entry fewer than
     % it used to, and for vision/robotics roles it is the weakest of the set.
     % For LLM, NLP, privacy or on-premise roles it is the strongest: uncomment
     % one of the two versions below and comment out something else to stay on
@@ -217,14 +236,19 @@
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
+ % ASML: GenAI split out and leading (the posting asks for GenAI/LLMs), then
+ % ML, then the MLOps and test/CI tooling behind software quality, with
+ % pytest and GitHub Actions moved to the front of Infrastructure.
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Python, SQL, TypeScript} \\
-     \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers} \\
-     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
-     \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, FAISS, Ollama, Gradio} \\
+     \textbf{Generative AI \& LLMs}{: LangChain, Ollama, FAISS, Llama 3.3, RAG, semantic chunking, prompt grounding, Gradio} \\
+     \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers, Faster-Whisper, OpenCV} \\
+     % Computer Vision folded into the line above to fit MARBET; U-Net,
+     % MediaPipe and PyBullet still appear in the project bullets.
+%     \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
      \textbf{MLOps \& Cloud}{: Azure ML, Azure Container Apps, Airflow, MLflow, Prometheus, Trivy} \\
-     \textbf{Infrastructure}{: Docker, Docker Compose, Portainer, GitHub Actions CI/CD, uv, Ruff, pytest} \\
+     \textbf{Infrastructure}{: pytest, GitHub Actions CI/CD, Docker, Docker Compose, Portainer, uv, Ruff} \\
      \textbf{Backend \& Data}{: FastAPI, Pydantic, PostgreSQL, SQLAlchemy, Alembic, Pandas, NumPy} \\
      \textbf{Frontend}{: Next.js, React, Tailwind CSS, WebSockets} \\
      \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent), Polish (basic)}
