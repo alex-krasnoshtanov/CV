@@ -1,0 +1,120 @@
+%-------------------------
+% Cover letter -- Genmab, Translational Data Science internship: hierarchical
+% and Bayesian modelling of historical control-arm data from preclinical
+% tumour studies (Early Translational Data Science team, Utrecht). Lives on
+% this branch only.
+%
+% Same layout as the ASML letter: the resume's header, 1in sides, 0.75in top
+% and bottom. Build: cd letters; pdflatex genmab-cover-letter.tex
+%
+% Project claims come from cv/resume.tex on this branch; the Biohub
+% validation detail comes from the Volt-biohub commit log; the coursework
+% sentence is as Alex stated it (Oct 2026). No R anywhere: the posting asks
+% for "R and/or Python", so Python covers it.
+% Style rules for this letter: plain words, no em-dashes, no "not X but Y".
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[left=1in,right=1in,top=0.75in,bottom=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+
+\urlstyle{same}
+\pagestyle{empty}
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Same guard as resume.tex: machine-readable text under pdflatex, still
+% compiles under XeTeX/tectonic.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\begin{document}
+
+%-----------HEADING (identical to resume.tex)-----------
+\begin{center}
+    \textbf{\Huge \scshape Oleksii Krasnoshtanov} \\ \vspace{1pt}
+    \small
+    \href{mailto:oleksiikrasnoshtanov@gmail.com}{\underline{oleksiikrasnoshtanov@gmail.com}} $|$
+    +31 6 29746862 $|$
+    Tilburg, Netherlands \\ \vspace{2pt}
+    \href{https://www.linkedin.com/in/oleksii-krasnoshtanov/}{\underline{linkedin.com/in/oleksii-krasnoshtanov}} $|$
+    \href{https://github.com/alex-krasnoshtanov}{\underline{github.com/alex-krasnoshtanov}}
+\end{center}
+% The resume's section rule, reused as the header divider.
+\vspace{-4pt}\noindent\rule{\textwidth}{0.4pt}
+
+\today
+
+Genmab, Early Translational Data Science \\
+Utrecht, Netherlands
+
+% Replace with the recruiter's name if the portal shows one.
+Dear Hiring Manager,
+
+% Genmab posts several projects in this department and allows two
+% applications. If you apply to a second one, both letters must name the
+% project titles in order of preference, with a line on each.
+I am applying for the internship in the Early Translational Data Science team
+on modelling historical control-arm data from preclinical tumour studies. I am
+a third-year student in Applied Data Science and Artificial Intelligence at
+Breda University of Applied Sciences, where I study on a scholarship with a
+9.1/10 average.
+
+Genmab appeals to me because its work stays close to both research and
+patients. Contributing to medicine in any form matters a lot to me, and working
+on data behind cancer treatment would be very motivating. I also like that this
+project has a clear practical aim: if historical controls can be reused safely,
+future studies can use fewer animals and still keep their statistical power.
+
+% Biohub facts (Volt-biohub commit log): validation by leaving one embryo out;
+% same-embryo hold-outs mis-ranked variants, a cross-embryo check agreed with
+% the board; noise floor measured; division knobs flipped sign by embryo.
+% "Top 14%": #542 of ~3,970 on the private leaderboard.
+The closest work I have done is a Kaggle competition on tracking cells in 3D
+microscopy of developing embryos, where my team of two finished in the top 14\%
+of about 4,000 teams. The data came from only a few embryos, so we validated by
+leaving one embryo out. When hold-outs from embryos the model had already seen
+started ranking our changes wrongly, we built a cross-embryo check that agreed
+with the leaderboard. We also measured the noise floor of our scores and
+dropped settings whose effect changed sign from one embryo to another. This
+project asks a similar question in a more structured setting: how much of the
+variation comes from the animal and how much from the study, and whether a
+model still holds when one study is left out.
+
+Statistical modelling, including Bayesian methods, was part of my first year,
+and in later projects we used statistical models as the baseline before moving
+on to machine learning. I would like to take this further into hierarchical
+models, which is a large part of why this project interests me. I have also
+worked with biological data before. I ranked 2nd of 77 in a Kaggle competition
+on plant root segmentation for NPEC, and in a five-person team I worked on a
+plant phenotyping platform where researcher feedback on flagged predictions
+drove retraining.
+
+I enjoy working with people from other fields. In my current project with CEVA
+Logistics and bol, I work with several companies to get access to their data,
+help write business requirements documents, and make sure our proposals are
+clear to people without a technical background. I ask a lot of questions when I
+am new to a field, and I expect to do that often with the scientists in
+Non-Clinical Safety and Pre-clinical in vivo Pharmacology.
+
+% Availability: the posting requires 9 months (minimum 8), full-time, starting
+% 1 February or 1 March. The last availability Alex stated was six months from
+% early 2027, so no duration is claimed here. Add a sentence once confirmed.
+I work mainly in Python, with Pandas and NumPy for data work. I use Git for
+everything and keep my code tested and documented; the platform project ran an
+85\% coverage gate across 430 tests. Utrecht is a direct train ride from
+Tilburg, so three days a week on site works well for me.
+
+I would be glad to talk about how I could contribute to the project. Thank you
+for your time and consideration.
+
+Kind regards,
+
+Oleksii Krasnoshtanov
+
+\end{document}

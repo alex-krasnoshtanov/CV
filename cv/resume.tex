@@ -106,11 +106,53 @@
     \resumeSubheading
       {Breda University of Applied Sciences}{Breda, Netherlands}
       {BSc Applied Data Science \& Artificial Intelligence; 9.1/10 (4.0 GPA); BUas Scholarship}{Sep 2024 -- Present}
+    % Coursework line, stated by Alex (Oct 2026): first-year statistical
+    % modelling incl. Bayesian methods, used as the baseline before ML in
+    % projects; MML elective in progress. For statistics-heavy roles; true for
+    % every audience, so a candidate for main as a commented variant.
+      \resumeItemListStart
+        \resumeItem{Coursework: statistical modelling incl. Bayesian methods; Mathematical Foundations for ML}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects \& Technical Work}
   \resumeSubHeadingListStart
+
+    % applications/genmab/historical-controls -- Genmab Translational Data
+    % Science internship (Bayesian borrowing of historical control arms).
+    % Ordered by fit, not date: biological data first (both plant-phenotyping
+    % entries, NPEC leading on the Kaggle ranking), then assembling data from
+    % several parties (Measurement Trust) and heterogeneous datasets with
+    % cross-model error analysis (Emotion Timeline); DSL held out for Biohub,
+    % which leads Hackathons & Competitions. Bayesian work shows only as
+    % coursework (Education); R, mixed-effects models and meta-analysis appear
+    % nowhere -- a cover-letter matter, not something to add here.
+    \resumeProjectHeading
+      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual project for NPEC, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
+      \resumeItemListStart
+        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle root-segmentation competition and selected to present; built the full loop from U-Net segmentation and root-tip extraction to OT-2 pipette control in PyBullet, PID benchmarked against PPO}
+      \resumeItemListEnd
+
+    % Full two-bullet NPEC, for versions with the room. Compressed above since
+    % Oct 2026 to fit the second Measurement Trust bullet; it overlaps CV
+    % Pipeline (same institution, same U-Net, same roots), and the ranking and
+    % robotics breadth both survive the cut.
+%      \resumeItemListStart
+%        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle competition for plant root segmentation; selected to present results}
+%        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
+%      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
+      \resumeItemListStart
+        \resumeItem{Built an MLOps platform for plant organ segmentation and root-tip detection: U-Net (ResNet-34) behind an authenticated FastAPI backend, with a Next.js frontend, PostgreSQL and Prometheus}
+        \resumeItem{Ran the model lifecycle from Airflow DAGs: data versioning, Azure ML training, drift detection on confidence, latency and error rate, and retraining driven by researcher feedback on flagged predictions}
+        % Branch-only short form of the deployment bullet (full one below),
+        % cut to fit Biohub; keeps the test metrics the posting cares about.
+        \resumeItem{Owned CI/CD to Docker Compose, Portainer and Azure Container Apps; 85\% coverage gate, 430 tests}
+%        \resumeItem{Owned deployment and CI/CD: one codebase shipping to Docker Compose, on-premise Portainer and Azure Container Apps, with blue-green cutover, health-gated rollback and OIDC cloud auth; 85\% coverage gate, 430 tests}
+      \resumeItemListEnd
 
     % Oct 2026: stakeholder and requirements work is concrete (data access from
     % both companies, BRDs, GDPR/ethics review); there is still no technical
@@ -134,41 +176,21 @@
 %      \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
-      \resumeItemListStart
-        \resumeItem{Built an MLOps platform for plant organ segmentation and root-tip detection: U-Net (ResNet-34) behind an authenticated FastAPI backend, with a Next.js frontend, PostgreSQL and Prometheus}
-        \resumeItem{Ran the model lifecycle from Airflow DAGs: data versioning, Azure ML training, drift detection on confidence, latency and error rate, and retraining driven by researcher feedback on flagged predictions}
-        \resumeItem{Owned deployment and CI/CD: one codebase shipping to Docker Compose, on-premise Portainer and Azure Container Apps, with blue-green cutover, health-gated rollback and OIDC cloud auth; 85\% coverage gate, 430 tests}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{Dutch Sign Language Fingerspelling Trainer} $|$ \emph{Solo rebuild of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/DSL-Learning}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/DSL-Learning/}{\underline{Docs}}}{May -- Sep 2026}
-      \resumeItemListStart
-        \resumeItem{Real-time NGT alphabet trainer: MediaPipe landmarks feed a PyTorch residual MLP for the 24 static letters (95\% validation) and a bidirectional LSTM over 30-frame sequences for the two needing motion (92\%)}
-        \resumeItem{Sole author: FastAPI WebSocket backend streaming to a Next.js 16 / TypeScript frontend, bilingual EN/NL, containerised with CI and published documentation}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual project for NPEC, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
-      \resumeItemListStart
-        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle root-segmentation competition and selected to present; built the full loop from U-Net segmentation and root-tip extraction to OT-2 pipette control in PyBullet, PID benchmarked against PPO}
-      \resumeItemListEnd
-
-    % Full two-bullet NPEC, for versions with the room. Compressed above since
-    % Oct 2026 to fit the second Measurement Trust bullet; it overlaps CV
-    % Pipeline (same institution, same U-Net, same roots), and the ranking and
-    % robotics breadth both survive the cut.
-%      \resumeItemListStart
-%        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle competition for plant root segmentation; selected to present results}
-%        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
-%      \resumeItemListEnd
-
-    \resumeProjectHeading
       {\textbf{Emotion Timeline} $|$ \emph{Solo rebuild of a group project for Content Intelligence Agency} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
       \resumeItemListStart
         \resumeItem{Turned a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
         \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
       \resumeItemListEnd
+
+    % DSL held out on this branch to make room for Biohub (Hackathons &
+    % Competitions): it is the least related entry for a biostatistics role.
+    % Bring it back for real-time, full-stack or computer-vision roles.
+%    \resumeProjectHeading
+%      {\textbf{Dutch Sign Language Fingerspelling Trainer} $|$ \emph{Solo rebuild of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/DSL-Learning}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/DSL-Learning/}{\underline{Docs}}}{May -- Sep 2026}
+%      \resumeItemListStart
+%        \resumeItem{Real-time NGT alphabet trainer: MediaPipe landmarks feed a PyTorch residual MLP for the 24 static letters (95\% validation) and a bidirectional LSTM over 30-frame sequences for the two needing motion (92\%)}
+%        \resumeItem{Sole author: FastAPI WebSocket backend streaming to a Next.js 16 / TypeScript frontend, bilingual EN/NL, containerised with CI and published documentation}
+%      \resumeItemListEnd
 
     % MARBET, held out rather than deleted: the page fits one entry fewer than
     % it used to, and for vision/robotics roles it is the weakest of the set.
@@ -200,6 +222,19 @@
 \section{Hackathons \& Competitions}
   \resumeSubHeadingListStart
 
+    % Biohub: biological data, and the second bullet is the closest thing in
+    % the repo to study-level variance and leave-one-study-out backtesting.
+    % Leads this section for bio/biomedical or validation-heavy roles. Facts
+    % from the Volt-biohub commit log: the 0.588 -> 0.926 run is the team's own
+    % pipeline; the final placement came from tuning a public notebook (x138),
+    % so no leaderboard score beyond 0.926 is claimed as ours.
+    \resumeProjectHeading
+      {\textbf{Biohub Cell Tracking During Development} $|$ \emph{Kaggle -- top 14\%, \#542 of $\sim$4,000 teams} $|$ \href{https://github.com/filipp-lotsmanov/Volt-biohub}{\underline{Code}}}{Sep 2026}
+      \resumeItemListStart
+        \resumeItem{Tracked cells through 3D+time embryo microscopy with sparse labels from the organisers' baseline: our pipeline went 0.588 to 0.926 on the public board via thresholded detection, ILP linking and model souping; team of 2}
+        \resumeItem{Scored every change on weighted leave-one-embryo-out CV, measured its noise floor and per-change CV-to-leaderboard transfer, and dropped knobs whose effect flipped sign between embryos}
+      \resumeItemListEnd
+
     \resumeProjectHeading
       {\textbf{BrabantHack 2026} $|$ \emph{Winner -- Demcon Deep Tech Track} $|$ \href{https://github.com/alex-krasnoshtanov/Detection-by-Shadow}{\underline{Code}}}{Apr 2026}
       \resumeItemListStart
@@ -219,14 +254,18 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
+     % Genmab order: data handling and reproducible, tested code lead (the
+     % posting asks for multi-study data and clean, documented code); vision,
+     % NLP and frontend move down. Same items as main, reordered only, except
+     % the Frontend line, cut to fit Biohub (Next.js still shows in CV Pipeline):
+     % \textbf{Frontend}{: Next.js, React, Tailwind CSS, WebSockets} \\
      \textbf{Languages}{: Python, SQL, TypeScript} \\
-     \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers} \\
+     \textbf{Data \& Backend}{: Pandas, NumPy, PostgreSQL, SQLAlchemy, Alembic, FastAPI, Pydantic} \\
+     \textbf{ML / Deep Learning}{: Scikit-learn, XGBoost, PyTorch, HuggingFace Transformers} \\
+     \textbf{MLOps \& Cloud}{: MLflow, Airflow, Azure ML, Azure Container Apps, Prometheus, Trivy} \\
+     \textbf{Infrastructure}{: GitHub Actions CI/CD, pytest, Ruff, uv, Docker, Docker Compose, Portainer} \\
      \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
      \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, FAISS, Ollama, Gradio} \\
-     \textbf{MLOps \& Cloud}{: Azure ML, Azure Container Apps, Airflow, MLflow, Prometheus, Trivy} \\
-     \textbf{Infrastructure}{: Docker, Docker Compose, Portainer, GitHub Actions CI/CD, uv, Ruff, pytest} \\
-     \textbf{Backend \& Data}{: FastAPI, Pydantic, PostgreSQL, SQLAlchemy, Alembic, Pandas, NumPy} \\
-     \textbf{Frontend}{: Next.js, React, Tailwind CSS, WebSockets} \\
      \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent), Polish (basic)}
     }}
  \end{itemize}
