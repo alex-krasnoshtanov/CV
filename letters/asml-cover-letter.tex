@@ -1,0 +1,111 @@
+%-------------------------
+% Cover letter -- ASML, AI | Computer Science internship: AI-driven software
+% quality (Virtual Computing Platform, Veldhoven, J-00352656). Lives on this
+% branch only.
+%
+% Same layout as the Philips letter: the resume's header, 1in sides, 0.75in
+% top and bottom. Build: cd letters; pdflatex asml-cover-letter.tex
+%
+% Every project claim below is taken from cv/resume.tex on this branch.
+% Style rules for this letter: plain words, no em-dashes, no "not X but Y".
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[left=1in,right=1in,top=0.75in,bottom=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+
+\urlstyle{same}
+\pagestyle{empty}
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Same guard as resume.tex: machine-readable text under pdflatex, still
+% compiles under XeTeX/tectonic.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\begin{document}
+
+%-----------HEADING (identical to resume.tex)-----------
+\begin{center}
+    \textbf{\Huge \scshape Oleksii Krasnoshtanov} \\ \vspace{1pt}
+    \small
+    \href{mailto:oleksiikrasnoshtanov@gmail.com}{\underline{oleksiikrasnoshtanov@gmail.com}} $|$
+    +31 6 29746862 $|$
+    Tilburg, Netherlands \\ \vspace{2pt}
+    \href{https://www.linkedin.com/in/oleksii-krasnoshtanov/}{\underline{linkedin.com/in/oleksii-krasnoshtanov}} $|$
+    \href{https://github.com/alex-krasnoshtanov}{\underline{github.com/alex-krasnoshtanov}}
+\end{center}
+% The resume's section rule, reused as the header divider.
+\vspace{-4pt}\noindent\rule{\textwidth}{0.4pt}
+
+\today
+
+ASML, Virtual Computing Platform team \\
+Veldhoven, Netherlands
+
+% Replace with the recruiter's or team lead's name if the portal shows one.
+Dear Hiring Manager,
+
+% A bare | in text prints as an em-dash under the default font encoding,
+% hence \textbar{} in the job title.
+I am applying for the AI \textbar{} Computer Science internship on AI-driven
+software quality in the Virtual Computing Platform team (job ID J-00352656).
+I am a third-year student in Applied Data Science and Artificial Intelligence
+at Breda University of Applied Sciences.
+
+I am highly passionate about ASML. Its work and research allow the world to
+develop the most advanced technology we have, and I find the research behind
+the company amazing. I want to grow my career in AI, and ASML is where I would
+most like to do that.
+
+I like that this assignment is practical. Working with software and test
+engineers to find where AI can help, building prototypes and agents, and
+measuring whether they make a real difference is the kind of work I enjoy most.
+Software quality is also something I already pay attention to in my own
+projects.
+
+On a five-person platform project I owned deployment and CI/CD, with an 85\%
+coverage gate, 430 tests, blue-green cutover and health-gated rollback. The
+platform also tracked drift in confidence, latency and error rate, and
+retrained the model based on researcher feedback on flagged predictions.
+Finding problems early and feeding them back into the system is the part of
+that project I would most like to build on.
+
+% Agents are the core deliverable of this assignment, and nothing in the
+% resume covers multi-step agents or tool use, so nothing is claimed here.
+% Add a sentence only if you have real agent work to point to.
+I also have hands-on experience with LLMs. In a two-person sprint I built a
+self-hosted RAG assistant with Llama 3.3 70B, LangChain and FAISS, and the
+client deployed it to production. It answers only from retrieved documents,
+shows the sources behind each answer, and says clearly when the documents do
+not cover a question. I think the same idea is important for AI that assesses
+software issues: engineers need to see where a conclusion comes from before
+they can trust it.
+
+My current project gives me practice with the stakeholder side. As data
+engineer on the Measurement Trust Project with CEVA Logistics and bol, I work
+with several companies to get access to their data, help write business
+requirements documents, and make sure our proposals are clear to non-technical
+stakeholders.
+
+% Availability: the posting wants a start as soon as possible, at least 5
+% months, at least 4 days a week. Six months full-time covers the length and
+% hours; the start date is the mismatch a reader will notice.
+I work mainly in Python and use TypeScript for web frontends. I live in
+Tilburg, so two days a week on site in Veldhoven is easy to arrange. I am
+available full-time for six months from the beginning of 2027.
+
+I would be happy to talk about how I could contribute to your team. Thank you
+for your time and consideration.
+
+Kind regards,
+
+Oleksii Krasnoshtanov
+
+\end{document}
