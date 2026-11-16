@@ -112,27 +112,18 @@
 \section{Projects \& Technical Work}
   \resumeSubHeadingListStart
 
-    % Oct 2026: stakeholder and requirements work is concrete (data access from
-    % both companies, BRDs, GDPR/ethics review); there is still no technical
-    % result. Revisit once there's an approach, model, or measured outcome --
-    % add it as its own bullet, don't stretch the stakeholder wording to imply one.
-    \resumeProjectHeading
-      {\textbf{Measurement Trust Project} $|$ \emph{Client project -- CEVA Logistics, BUas; team of 4}}{Sep 2026 -- Jan 2027}
-      \resumeItemListStart
-        \resumeItem{Data engineer on size-group misclassification at bol's BFC1/2 (bol-owned, CEVA-operated), driving fee disputes and re-measurement requests; obtained partly anonymised data from CEVA and bol, liaised with Logistore and third parties, co-wrote BRDs keeping proposals GDPR-compliant, ethical and clear to non-technical stakeholders}
-      \resumeItemListEnd
-    % Two-bullet version, for stakeholder-facing or consultancy roles with the
-    % room (costs about two lines over the merged bullet above). Adds that the
-    % proposals must fit the client's infrastructure.
-%      \resumeItemListStart
-%        \resumeItem{Data engineer on inconsistent item measurement at bol's BFC1/2 fulfilment centres (bol-owned, CEVA-operated), where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
-%        \resumeItem{Obtained partly anonymised data from both CEVA and bol, working with Logistore and other third parties; co-wrote BRDs, kept proposals GDPR- and ethics-compliant, fit for client infrastructure and clear to non-technical stakeholders}
-%      \resumeItemListEnd
-    % Short version, one bullet, for roles where stakeholder work is not the point:
-%      \resumeItemListStart
-%        \resumeItem{Data engineer on a client-facing project addressing inconsistent item measurement in bol warehouse fulfilment, where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
-%      \resumeItemListEnd
-
+    % applications/thermo-fisher-ai-ml-microscopy -- Thermo Fisher Eindhoven,
+    % Internship: AI/ML Applications for Materials Science and Electron
+    % Microscopy (R-01366282): ML for stage navigation, tilt/alignment,
+    % HAADF-to-EDX prediction and denoising, segmentation. Ordered by fit:
+    % CV Pipeline leads for U-Net segmentation and automated analysis; NPEC
+    % in its full two-bullet form (segmentation to pixel-to-robot positioning
+    % is the closest thing to stage navigation); DSL for PyTorch models with
+    % validation metrics; Emotion Timeline for model-disagreement error
+    % analysis; Measurement Trust short. MARBET held out. Not covered by the
+    % master: physics, electron microscopy, spectroscopy, numerical methods.
+    % Posting says start 1 Oct 2026 to about Apr 2027, earlier than my
+    % availability -- cover-letter matter.
     \resumeProjectHeading
       {\textbf{CV Pipeline -- Plant Phenotyping Platform} $|$ \emph{5-person group project, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/CV-Pipeline-Deployment-Platform}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/CV-Pipeline-Deployment-Platform/}{\underline{Docs}}}{Apr -- Jun 2026}
       \resumeItemListStart
@@ -140,6 +131,19 @@
         \resumeItem{Ran the model lifecycle from Airflow DAGs: data versioning, Azure ML training, drift detection on confidence, latency and error rate, and retraining driven by researcher feedback on flagged predictions}
         \resumeItem{Owned deployment and CI/CD: one codebase shipping to Docker Compose, on-premise Portainer and Azure Container Apps, with blue-green cutover, health-gated rollback and OIDC cloud auth; 85\% coverage gate, 430 tests}
       \resumeItemListEnd
+
+    % NPEC in its full two-bullet form on this branch: the robotics loop is
+    % the point for a microscope-navigation role.
+    \resumeProjectHeading
+      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual project for NPEC, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
+      \resumeItemListStart
+        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle competition for plant root segmentation; selected to present results}
+        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
+      \resumeItemListEnd
+    % Compressed one-bullet NPEC (main's version since Oct 2026):
+%      \resumeItemListStart
+%        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle root-segmentation competition and selected to present; built the full loop from U-Net segmentation and root-tip extraction to OT-2 pipette control in PyBullet, PID benchmarked against PPO}
+%      \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Dutch Sign Language Fingerspelling Trainer} $|$ \emph{Solo rebuild of a group project} $|$ \href{https://github.com/alex-krasnoshtanov/DSL-Learning}{\underline{Code}} $|$ \href{https://alex-krasnoshtanov.github.io/DSL-Learning/}{\underline{Docs}}}{May -- Sep 2026}
@@ -149,32 +153,37 @@
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{NPEC Plant Phenotyping System} $|$ \emph{Individual project for NPEC, BUas} $|$ \href{https://github.com/alex-krasnoshtanov/NPEC-Plant-Phenotyping}{\underline{Code}}}{Nov 2025 -- Jan 2026}
-      \resumeItemListStart
-        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle root-segmentation competition and selected to present; built the full loop from U-Net segmentation and root-tip extraction to OT-2 pipette control in PyBullet, PID benchmarked against PPO}
-      \resumeItemListEnd
-
-    % Full two-bullet NPEC, for versions with the room. Compressed above since
-    % Oct 2026 to fit the second Measurement Trust bullet; it overlaps CV
-    % Pipeline (same institution, same U-Net, same roots), and the ranking and
-    % robotics breadth both survive the cut.
-%      \resumeItemListStart
-%        \resumeItem{Ranked \textbf{\#2 of 77} in a Kaggle competition for plant root segmentation; selected to present results}
-%        \resumeItem{Built the full autonomous loop -- U-Net root segmentation, root-tip extraction, pixel-to-robot transform and OT-2 pipette control in PyBullet -- benchmarking PID against a PPO reinforcement-learning controller}
-%      \resumeItemListEnd
-
-    \resumeProjectHeading
       {\textbf{Emotion Timeline} $|$ \emph{Solo rebuild of a group project for Content Intelligence Agency} $|$ \href{https://github.com/alex-krasnoshtanov/Emotion-Timeline}{\underline{Code}}}{Sep 2026}
       \resumeItemListStart
         \resumeItem{Turned a 51-minute Russian documentary into a per-scene emotion timeline: 316 transcript segments grouped into 47 scenes, each scored by two models trained on different languages}
         \resumeItem{Built the pipeline behind the classifier: speech-to-text system selection, a training set assembled from datasets with no single language/class overlap, and error analysis on where the two models disagree}
       \resumeItemListEnd
 
-    % MARBET, held out rather than deleted: the page fits one entry fewer than
-    % it used to, and for vision/robotics roles it is the weakest of the set.
-    % For LLM, NLP, privacy or on-premise roles it is the strongest: uncomment
-    % one of the two versions below and comment out something else to stay on
-    % one page.
+    % Oct 2026: stakeholder and requirements work is concrete (data access from
+    % both companies, BRDs, GDPR/ethics review); there is still no technical
+    % result. Revisit once there's an approach, model, or measured outcome --
+    % add it as its own bullet, don't stretch the stakeholder wording to imply one.
+    % Short version on this branch: stakeholder work is not the point for an
+    % R&D research role.
+    \resumeProjectHeading
+      {\textbf{Measurement Trust Project} $|$ \emph{Client project -- CEVA Logistics, BUas; team of 4}}{Sep 2026 -- Jan 2027}
+      \resumeItemListStart
+        \resumeItem{Data engineer on a client-facing project addressing inconsistent item measurement in bol warehouse fulfilment, where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
+      \resumeItemListEnd
+    % Merged one-bullet version (main's default):
+%      \resumeItemListStart
+%        \resumeItem{Data engineer on size-group misclassification at bol's BFC1/2 (bol-owned, CEVA-operated), driving fee disputes and re-measurement requests; obtained partly anonymised data from CEVA and bol, liaised with Logistore and third parties, co-wrote BRDs keeping proposals GDPR-compliant, ethical and clear to non-technical stakeholders}
+%      \resumeItemListEnd
+    % Two-bullet version, for stakeholder-facing or consultancy roles with the
+    % room. Adds that the proposals must fit the client's infrastructure.
+%      \resumeItemListStart
+%        \resumeItem{Data engineer on inconsistent item measurement at bol's BFC1/2 fulfilment centres (bol-owned, CEVA-operated), where size-group misclassification drives fee disputes and repeated seller re-measurement requests}
+%        \resumeItem{Obtained partly anonymised data from both CEVA and bol, working with Logistore and other third parties; co-wrote BRDs, kept proposals GDPR- and ethics-compliant, fit for client infrastructure and clear to non-technical stakeholders}
+%      \resumeItemListEnd
+
+    % MARBET held out on this branch: LLMs are not part of a microscopy
+    % image/ML research role. Strongest entry for LLM, NLP, privacy or
+    % on-premise roles.
     %
     % Short version, one bullet:
 %    \resumeProjectHeading
@@ -183,9 +192,7 @@
 %        \resumeItem{Built self-hosted RAG system (Llama 3.3 70B via Ollama, LangChain, FAISS) for corporate event Q\&A with multi-format ingestion and Gradio web interface; client deployed to production}
 %      \resumeItemListEnd
     %
-    % Headline version, three bullets. The third (grounding, sources, fallback)
-    % also stands alone under the short version for roles that ask about
-    % explainability or traceability rather than LLMs as such.
+    % Headline version, three bullets:
 %    \resumeProjectHeading
 %      {\textbf{MARBET Event Assistant -- On-Premise RAG Chatbot} $|$ \emph{2-person sprint} $|$ \href{https://github.com/alex-krasnoshtanov/MARBET-Chatbot}{\underline{Code}}}{Apr -- May 2025}
 %      \resumeItemListStart
@@ -219,13 +226,15 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, SQL, TypeScript} \\
+     % Microscopy ML order: ML / Deep Learning and Computer Vision lead.
+     % Same items as main.
      \textbf{ML / Deep Learning}{: PyTorch, Scikit-learn, XGBoost, HuggingFace Transformers} \\
      \textbf{Computer Vision}{: OpenCV, U-Net, MediaPipe, PyBullet} \\
-     \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, FAISS, Ollama, Gradio} \\
-     \textbf{MLOps \& Cloud}{: Azure ML, Azure Container Apps, Airflow, MLflow, Prometheus, Trivy} \\
-     \textbf{Infrastructure}{: Docker, Docker Compose, Portainer, GitHub Actions CI/CD, uv, Ruff, pytest} \\
+     \textbf{Languages}{: Python, SQL, TypeScript} \\
      \textbf{Backend \& Data}{: FastAPI, Pydantic, PostgreSQL, SQLAlchemy, Alembic, Pandas, NumPy} \\
+     \textbf{MLOps \& Cloud}{: Azure ML, Azure Container Apps, Airflow, MLflow, Prometheus, Trivy} \\
+     \textbf{NLP \& Audio}{: LangChain, Faster-Whisper, FAISS, Ollama, Gradio} \\
+     \textbf{Infrastructure}{: Docker, Docker Compose, Portainer, GitHub Actions CI/CD, uv, Ruff, pytest} \\
      \textbf{Frontend}{: Next.js, React, Tailwind CSS, WebSockets} \\
      \textbf{Spoken Languages}{: English (fluent), Ukrainian (native), Russian (fluent), Polish (basic)}
     }}
